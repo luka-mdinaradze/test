@@ -132,6 +132,7 @@ def run_backtest(
     in_pos = False
     side: Side = "long"
     entry_px = stop_px = qty = risk_amt = 0.0
+    init_stop_px = 0.0        # the stop as first placed, so trail exits are distinguishable
     tp_px: Optional[float] = None
     trail_mult: Optional[float] = None
     max_bars: Optional[int] = None
@@ -166,6 +167,7 @@ def run_backtest(
                     # Realised risk can be < intended if the leverage cap bound.
                     risk_amt = q * sd
                     stop_px = fill - sd if side == "long" else fill + sd
+                    init_stop_px = stop_px
                     tp_px = (fill + pending.tp_dist if side == "long" else fill - pending.tp_dist) \
                         if pending.tp_dist else None
                     trail_mult = pending.trail_atr_mult
@@ -183,18 +185,20 @@ def run_backtest(
         if in_pos:
             exit_px: Optional[float] = None
             reason = ""
+            trailed = abs(stop_px - init_stop_px) > 1e-12
+            stop_label = "trail_stop" if trailed else "stop"
             if side == "long":
                 if o[i] <= stop_px:                       # gapped through the stop
                     exit_px, reason = o[i], "gap_stop"
                 elif lo[i] <= stop_px:                    # stop before target (pessimistic)
-                    exit_px, reason = stop_px, "stop"
+                    exit_px, reason = stop_px, stop_label
                 elif tp_px is not None and h[i] >= tp_px:
                     exit_px, reason = tp_px, "take_profit"
             else:
                 if o[i] >= stop_px:
                     exit_px, reason = o[i], "gap_stop"
                 elif h[i] >= stop_px:
-                    exit_px, reason = stop_px, "stop"
+                    exit_px, reason = stop_px, stop_label
                 elif tp_px is not None and lo[i] <= tp_px:
                     exit_px, reason = tp_px, "take_profit"
 
