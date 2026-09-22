@@ -1,0 +1,161 @@
+2026-09-22 21:25:46,184 INFO     ENTRY long qty=0.00444000 limit=5959.52 stop=5734.43 notional=$26.46 risk=$1.00 (close 5959.53 > Donchian55 5954.43, ADX 28.4, vol pct 0.36)
+2026-09-22 21:25:46,187 INFO     OPENED long qty=0.00444000 @ 5959.52 stop=5734.43 risk=$1.00 (slip 0.0bps)
+2026-09-22 21:25:46,187 INFO     stop placed stp-201c21b9f3b540f2 @ 5734.43
+2026-09-22 21:25:46,214 INFO     CLOSED long @ 5733.28 (stop) pnl=$-1.0352 = -1.04R
+2026-09-22 21:25:50,372 INFO     ENTRY long qty=0.00686000 limit=6154.15 stop=6009.89 notional=$42.22 risk=$0.99 (close 6154.16 > Donchian55 6143.88, ADX 42.2, vol pct 0.48)
+2026-09-22 21:25:50,375 INFO     OPENED long qty=0.00686000 @ 6154.15 stop=6009.89 risk=$0.99 (slip 0.0bps)
+2026-09-22 21:25:50,375 INFO     stop placed stp-68d82014378741fc @ 6009.89
+2026-09-22 21:25:50,401 INFO     trailing stop 6009.89 -> 6028.81
+2026-09-22 21:25:50,401 INFO     stop placed stp-bbe9f1eb56b64b95 @ 6028.81
+2026-09-22 21:25:50,465 INFO     CLOSED long @ 6027.60 (stop) pnl=$-0.9179 = -0.93R
+2026-09-22 21:25:58,109 INFO     ENTRY long qty=0.01049000 limit=4069.02 stop=3975.57 notional=$42.68 risk=$0.98 (close 4069.03 > Donchian55 4057.38, ADX 24.5, vol pct 0.37)
+2026-09-22 21:25:58,112 INFO     OPENED long qty=0.01049000 @ 4069.02 stop=3975.57 risk=$0.98 (slip 0.0bps)
+2026-09-22 21:25:58,112 INFO     stop placed stp-a77756b383954b52 @ 3975.57
+2026-09-22 21:25:58,123 INFO     trailing stop 3975.57 -> 3987.42
+2026-09-22 21:25:58,123 INFO     stop placed stp-af49bb6d6a654399 @ 3987.42
+2026-09-22 21:25:58,162 INFO     trailing stop 3987.42 -> 3992.76
+2026-09-22 21:25:58,162 INFO     stop placed stp-e1d3aa528b804423 @ 3992.76
+2026-09-22 21:25:58,177 INFO     trailing stop 3992.76 -> 4006.35
+2026-09-22 21:25:58,177 INFO     stop placed stp-43d4fa616b104d6d @ 4006.35
+2026-09-22 21:25:58,179 INFO     trailing stop 4006.35 -> 4028.40
+2026-09-22 21:25:58,179 INFO     stop placed stp-a61ff443292d4fb7 @ 4028.40
+2026-09-22 21:25:58,270 INFO     CLOSED long @ 4027.59 (stop) pnl=$-0.4853 = -0.50R
+2026-09-22 21:25:58,351 INFO     ENTRY long qty=0.00451000 limit=4218.40 stop=4110.44 notional=$19.02 risk=$0.49 (close 4218.41 > Donchian55 4204.21, ADX 30.1, vol pct 0.78)
+2026-09-22 21:25:58,355 INFO     OPENED long qty=0.00451000 @ 4218.40 stop=4110.44 risk=$0.49 (slip 0.0bps)
+2026-09-22 21:25:58,355 INFO     stop placed stp-b2002d1db3e149dc @ 4110.44
+2026-09-22 21:25:58,362 INFO     trailing stop 4110.44 -> 4115.74
+2026-09-22 21:25:58,362 INFO     stop placed stp-0c91f34ef083461b @ 4115.74
+2026-09-22 21:25:58,368 INFO     trailing stop 4115.74 -> 4124.29
+2026-09-22 21:25:58,369 INFO     stop placed stp-cf37e09be48547d5 @ 4124.29
+2026-09-22 21:25:58,371 INFO     trailing stop 4124.29 -> 4146.93
+2026-09-22 21:25:58,371 INFO     stop placed stp-a0e48359b6524880 @ 4146.93
+2026-09-22 21:25:58,373 INFO     trailing stop 4146.93 -> 4176.69
+2026-09-22 21:25:58,373 INFO     stop placed stp-18a54a7ff3e947d9 @ 4176.69
+2026-09-22 21:25:58,376 INFO     trailing stop 4176.69 -> 4189.08
+2026-09-22 21:25:58,376 INFO     stop placed stp-8a646e81dcf943ae @ 4189.08
+2026-09-22 21:25:58,378 INFO     trailing stop 4189.08 -> 4204.19
+2026-09-22 21:25:58,378 INFO     stop placed stp-ec1644a47fe74472 @ 4204.19
+2026-09-22 21:25:58,381 INFO     trailing stop 4204.19 -> 4209.45
+2026-09-22 21:25:58,381 INFO     stop placed stp-01b61fc7f408459c @ 4209.45
+2026-09-22 21:25:58,426 INFO     trailing stop 4209.45 -> 4220.70
+2026-09-22 21:25:58,426 INFO     stop placed stp-cfc10caae3b642fa @ 4220.70
+2026-09-22 21:25:58,431 INFO     trailing stop 4220.70 -> 4227.49
+2026-09-22 21:25:58,431 INFO     stop placed stp-9231aef7e092460a @ 4227.49
+2026-09-22 21:25:58,435 INFO     trailing stop 4227.49 -> 4237.26
+2026-09-22 21:25:58,436 INFO     stop placed stp-67631790886d4c75 @ 4237.26
+2026-09-22 21:25:58,440 INFO     trailing stop 4237.26 -> 4243.19
+2026-09-22 21:25:58,440 INFO     stop placed stp-69108c12f7d54b16 @ 4243.19
+2026-09-22 21:25:58,442 INFO     trailing stop 4243.19 -> 4257.80
+2026-09-22 21:25:58,442 INFO     stop placed stp-9b415d32e0334723 @ 4257.80
+2026-09-22 21:25:58,445 INFO     trailing stop 4257.80 -> 4283.26
+2026-09-22 21:25:58,445 INFO     stop placed stp-900e64d670c748a3 @ 4283.26
+2026-09-22 21:25:58,447 INFO     trailing stop 4283.26 -> 4303.80
+2026-09-22 21:25:58,448 INFO     stop placed stp-3b4e9103c986425f @ 4303.80
+2026-09-22 21:25:58,452 INFO     trailing stop 4303.80 -> 4309.76
+2026-09-22 21:25:58,452 INFO     stop placed stp-8735943220d44faa @ 4309.76
+2026-09-22 21:25:58,468 INFO     trailing stop 4309.76 -> 4323.07
+2026-09-22 21:25:58,468 INFO     stop placed stp-df7aa3836cf2450a @ 4323.07
+2026-09-22 21:25:58,470 INFO     trailing stop 4323.07 -> 4338.89
+2026-09-22 21:25:58,471 INFO     stop placed stp-85bfd0091d784994 @ 4338.89
+2026-09-22 21:25:58,473 INFO     trailing stop 4338.89 -> 4348.93
+2026-09-22 21:25:58,473 INFO     stop placed stp-04dd1d64cfc446f6 @ 4348.93
+2026-09-22 21:25:58,484 INFO     trailing stop 4348.93 -> 4365.76
+2026-09-22 21:25:58,484 INFO     stop placed stp-1bcf01a4a8bc46e5 @ 4365.76
+2026-09-22 21:25:58,487 INFO     trailing stop 4365.76 -> 4372.20
+2026-09-22 21:25:58,487 INFO     stop placed stp-3bf9045f0b15455b @ 4372.20
+2026-09-22 21:25:58,489 INFO     trailing stop 4372.20 -> 4383.56
+2026-09-22 21:25:58,489 INFO     stop placed stp-0baf7843ef9c464a @ 4383.56
+2026-09-22 21:25:58,492 INFO     trailing stop 4383.56 -> 4397.02
+2026-09-22 21:25:58,492 INFO     stop placed stp-0cdde32c1315412d @ 4397.02
+2026-09-22 21:25:58,494 INFO     trailing stop 4397.02 -> 4422.48
+2026-09-22 21:25:58,494 INFO     stop placed stp-67953594af614aa6 @ 4422.48
+2026-09-22 21:25:58,501 INFO     trailing stop 4422.48 -> 4433.03
+2026-09-22 21:25:58,501 INFO     stop placed stp-4d1f792732af4734 @ 4433.03
+2026-09-22 21:25:58,505 INFO     trailing stop 4433.03 -> 4455.42
+2026-09-22 21:25:58,505 INFO     stop placed stp-7da5df3ee31c45c7 @ 4455.42
+2026-09-22 21:25:58,568 INFO     CLOSED long @ 4454.53 (stop) pnl=$1.0410 = +2.14R
+2026-09-22 21:25:59,425 INFO     ENTRY long qty=0.00666000 limit=4503.20 stop=4355.21 notional=$29.99 risk=$0.99 (close 4503.21 > Donchian55 4480.40, ADX 22.0, vol pct 0.95)
+2026-09-22 21:25:59,428 INFO     OPENED long qty=0.00666000 @ 4503.20 stop=4355.21 risk=$0.99 (slip 0.0bps)
+2026-09-22 21:25:59,428 INFO     stop placed stp-e62d15981e514c6f @ 4355.21
+2026-09-22 21:25:59,511 INFO     trailing stop 4355.21 -> 4362.11
+2026-09-22 21:25:59,511 INFO     stop placed stp-c0b27c050fa2439f @ 4362.11
+2026-09-22 21:25:59,518 INFO     trailing stop 4362.11 -> 4380.28
+2026-09-22 21:25:59,518 INFO     stop placed stp-35f6ccb0dc694999 @ 4380.28
+2026-09-22 21:25:59,562 INFO     CLOSED long @ 4379.40 (stop) pnl=$-0.8596 = -0.87R
+2026-09-22 21:26:00,214 INFO     ENTRY long qty=0.00525000 limit=4733.44 stop=4547.51 notional=$24.85 risk=$0.98 (close 4733.45 > Donchian55 4717.46, ADX 22.8, vol pct 0.96)
+2026-09-22 21:26:00,218 INFO     OPENED long qty=0.00525000 @ 4733.44 stop=4547.51 risk=$0.98 (slip 0.0bps)
+2026-09-22 21:26:00,218 INFO     stop placed stp-9d678539ba104bf7 @ 4547.51
+2026-09-22 21:26:00,236 INFO     trailing stop 4547.51 -> 4555.22
+2026-09-22 21:26:00,237 INFO     stop placed stp-cfe6532edefe4084 @ 4555.22
+2026-09-22 21:26:00,242 INFO     trailing stop 4555.22 -> 4564.93
+2026-09-22 21:26:00,242 INFO     stop placed stp-1ca8b7e185384f08 @ 4564.93
+2026-09-22 21:26:00,244 INFO     trailing stop 4564.93 -> 4615.72
+2026-09-22 21:26:00,244 INFO     stop placed stp-03a7153e89e24a54 @ 4615.72
+2026-09-22 21:26:00,272 INFO     CLOSED long @ 4614.80 (stop) pnl=$-0.6521 = -0.67R
+2026-09-22 21:26:00,737 INFO     ENTRY long qty=0.00554000 limit=4824.73 stop=4649.65 notional=$26.73 risk=$0.97 (close 4824.74 > Donchian55 4819.01, ADX 23.3, vol pct 0.77)
+2026-09-22 21:26:00,741 INFO     OPENED long qty=0.00554000 @ 4824.73 stop=4649.65 risk=$0.97 (slip 0.0bps)
+2026-09-22 21:26:00,741 INFO     stop placed stp-e1e7a0c5437b4e73 @ 4649.65
+2026-09-22 21:26:00,770 INFO     trailing stop 4649.65 -> 4676.43
+2026-09-22 21:26:00,771 INFO     stop placed stp-50921e82c5394c2f @ 4676.43
+2026-09-22 21:26:00,774 INFO     trailing stop 4676.43 -> 4690.18
+2026-09-22 21:26:00,774 INFO     stop placed stp-00c11d237e7949fc @ 4690.18
+2026-09-22 21:26:00,777 INFO     trailing stop 4690.18 -> 4711.88
+2026-09-22 21:26:00,778 INFO     stop placed stp-a6f1ad4042b842a9 @ 4711.88
+2026-09-22 21:26:00,784 INFO     trailing stop 4711.88 -> 4789.85
+2026-09-22 21:26:00,784 INFO     stop placed stp-a9a6ac3aeb384093 @ 4789.85
+2026-09-22 21:26:00,798 INFO     trailing stop 4789.85 -> 4805.51
+2026-09-22 21:26:00,799 INFO     stop placed stp-b894e4e1ac25410b @ 4805.51
+2026-09-22 21:26:00,802 INFO     trailing stop 4805.51 -> 4834.26
+2026-09-22 21:26:00,802 INFO     stop placed stp-874df47816714943 @ 4834.26
+2026-09-22 21:26:00,822 INFO     trailing stop 4834.26 -> 4846.88
+2026-09-22 21:26:00,823 INFO     stop placed stp-bf5cfbd76b264f1b @ 4846.88
+2026-09-22 21:26:00,835 INFO     trailing stop 4846.88 -> 4890.53
+2026-09-22 21:26:00,835 INFO     stop placed stp-df5233d720534285 @ 4890.53
+2026-09-22 21:26:00,844 INFO     trailing stop 4890.53 -> 4903.63
+2026-09-22 21:26:00,844 INFO     stop placed stp-3d2047232fb642bd @ 4903.63
+2026-09-22 21:26:00,846 INFO     trailing stop 4903.63 -> 4950.67
+2026-09-22 21:26:00,846 INFO     stop placed stp-54e93a6469ef4363 @ 4950.67
+2026-09-22 21:26:00,849 INFO     trailing stop 4950.67 -> 4973.57
+2026-09-22 21:26:00,849 INFO     stop placed stp-d4b3eb074f20431f @ 4973.57
+2026-09-22 21:26:00,852 INFO     trailing stop 4973.57 -> 5010.92
+2026-09-22 21:26:00,852 INFO     stop placed stp-82d0b095f9714247 @ 5010.92
+2026-09-22 21:26:00,866 INFO     trailing stop 5010.92 -> 5028.05
+2026-09-22 21:26:00,866 INFO     stop placed stp-ac1f5b3ece084b96 @ 5028.05
+2026-09-22 21:26:00,870 INFO     trailing stop 5028.05 -> 5039.41
+2026-09-22 21:26:00,870 INFO     stop placed stp-f75a0b6f9b494f05 @ 5039.41
+2026-09-22 21:26:00,875 INFO     trailing stop 5039.41 -> 5056.00
+2026-09-22 21:26:00,876 INFO     stop placed stp-83329404e9dd4bb2 @ 5056.00
+2026-09-22 21:26:00,881 INFO     trailing stop 5056.00 -> 5085.43
+2026-09-22 21:26:00,881 INFO     stop placed stp-82d99da9401c49a4 @ 5085.43
+2026-09-22 21:26:00,883 INFO     trailing stop 5085.43 -> 5116.83
+2026-09-22 21:26:00,883 INFO     stop placed stp-4c9a634ad0d24816 @ 5116.83
+2026-09-22 21:26:00,888 INFO     trailing stop 5116.83 -> 5158.25
+2026-09-22 21:26:00,888 INFO     stop placed stp-0d7bf339fc704e83 @ 5158.25
+2026-09-22 21:26:00,890 INFO     trailing stop 5158.25 -> 5179.41
+2026-09-22 21:26:00,890 INFO     stop placed stp-c7a96d0483c24ba9 @ 5179.41
+2026-09-22 21:26:00,981 INFO     CLOSED long @ 5178.37 (stop) pnl=$1.9252 = +1.98R
+2026-09-22 21:26:07,690 INFO     ENTRY long qty=0.00965000 limit=2973.27 stop=2870.68 notional=$28.69 risk=$0.99 (close 2973.28 > Donchian55 2969.96, ADX 43.0, vol pct 0.46)
+2026-09-22 21:26:07,694 INFO     OPENED long qty=0.00965000 @ 2973.27 stop=2870.68 risk=$0.99 (slip 0.0bps)
+2026-09-22 21:26:07,694 INFO     stop placed stp-aaa5a6046c9a4ef8 @ 2870.68
+2026-09-22 21:26:07,715 INFO     CLOSED long @ 2870.11 (stop) pnl=$-1.0290 = -1.04R
+2026-09-22 21:26:07,825 INFO     ENTRY long qty=0.00789000 limit=3025.75 stop=2901.67 notional=$23.87 risk=$0.98 (close 3025.76 > Donchian55 3011.34, ADX 26.5, vol pct 0.97)
+2026-09-22 21:26:07,829 INFO     OPENED long qty=0.00789000 @ 3025.75 stop=2901.67 risk=$0.98 (slip 0.0bps)
+2026-09-22 21:26:07,829 INFO     stop placed stp-017936968076455c @ 2901.67
+2026-09-22 21:26:07,846 INFO     trailing stop 2901.67 -> 2937.73
+2026-09-22 21:26:07,846 INFO     stop placed stp-a5056755d8f14947 @ 2937.73
+2026-09-22 21:26:07,941 INFO     CLOSED long @ 2937.14 (stop) pnl=$-0.7271 = -0.74R
+2026-09-22 21:26:10,012 INFO     ENTRY long qty=0.00699000 limit=3396.49 stop=3257.46 notional=$23.74 risk=$0.97 (close 3396.50 > Donchian55 3390.96, ADX 25.3, vol pct 0.79)
+2026-09-22 21:26:10,017 INFO     OPENED long qty=0.00699000 @ 3396.49 stop=3257.46 risk=$0.97 (slip 0.0bps)
+2026-09-22 21:26:10,017 INFO     stop placed stp-32aa21c52aa04e0d @ 3257.46
+2026-09-22 21:26:10,072 INFO     CLOSED long @ 3256.81 (stop) pnl=$-1.0039 = -1.03R
+2026-09-22 21:26:10,414 INFO     ENTRY long qty=0.00365000 limit=3485.54 stop=3354.04 notional=$12.72 risk=$0.48 (close 3485.55 > Donchian55 3481.84, ADX 27.5, vol pct 0.61)
+2026-09-22 21:26:10,421 INFO     OPENED long qty=0.00365000 @ 3485.54 stop=3354.04 risk=$0.48 (slip 0.0bps)
+2026-09-22 21:26:10,421 INFO     stop placed stp-54afe6fb22e44556 @ 3354.04
+2026-09-22 21:26:10,472 INFO     CLOSED long @ 3353.37 (stop) pnl=$-0.4972 = -1.04R
+2026-09-22 21:26:12,985 INFO     ENTRY long qty=0.00622000 limit=3388.85 stop=3311.90 notional=$21.08 risk=$0.48 (close 3388.86 > Donchian55 3370.84, ADX 28.8, vol pct 0.38)
+2026-09-22 21:26:12,989 INFO     OPENED long qty=0.00622000 @ 3388.85 stop=3311.90 risk=$0.48 (slip 0.0bps)
+2026-09-22 21:26:12,989 INFO     stop placed stp-12f2d1406fed4856 @ 3311.90
+2026-09-22 21:26:13,024 INFO     trailing stop 3311.90 -> 3340.57
+2026-09-22 21:26:13,024 INFO     stop placed stp-bb9952a3a56e4c3b @ 3340.57
+2026-09-22 21:26:13,048 INFO     CLOSED long @ 3339.90 (stop) pnl=$-0.3294 = -0.69R
+2026-09-22 21:26:13,048 CRITICAL HALTED: 5 consecutive losses (limit 5)

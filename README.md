@@ -27,6 +27,33 @@ python3 run_all.py --equity 1000 --risk 0.02 --fee-bps 2 --slip-bps 1
 python3 analyze_profiles.py               # assumption-driven risk math, no data needed
 ```
 
+## The bot
+
+A live trading bot built on the same strategy and the same fill assumptions:
+
+```bash
+python3 -m bot.run backtest            # replay the strategy on history
+python3 -m bot.run paper               # forward-test: live prices, simulated fills
+python3 -m bot.run status              # where it stands
+python3 -m bot.run promote             # human moves PAPER -> LIVE (gated, refuses if unearned)
+python3 tests/test_bot.py              # 22 tests: risk gates, state, reconciliation, invariants
+```
+
+It starts in PAPER and **cannot promote itself** — a human runs `promote`, and the
+gate refuses unless there are 40+ paper trades with positive expectancy. Live
+trading then runs at half risk for the first 20 trades.
+
+Safety properties, each covered by a test:
+
+| Property | Enforced by |
+|---|---|
+| An open position always has a live stop **on the exchange** | `trader.py` invariant, verified across a full simulated run |
+| State survives a crash mid-trade | atomic write (temp + `os.replace`) |
+| The venue is the source of truth on restart | `Trader.reconcile()` |
+| A timed-out request cannot double-fill | `client_order_id` on every order |
+| Drawdown, loss streak and daily loss can halt it | `risk.py`, hard halts need a human to clear |
+| Spot sizing never borrows | leverage cap shrinks size, risk falls below target |
+
 ## Data
 
 `quant/data.py` tries Binance (1h BTCUSDT back to Aug-2017), then falls back to a
