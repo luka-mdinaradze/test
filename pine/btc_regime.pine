@@ -22,36 +22,36 @@
 indicator("BTC Regime Dashboard", shorttitle="BTC Regime", overlay=true)
 
 // ----------------------------------------------------------------- inputs ----
-gT = "1 · Trend structure"
+gT = "1. Trend structure"
 donLen  = input.int(55,   "Donchian lookback (bars)", minval=5,  group=gT)
 emaLen  = input.int(200,  "EMA trend filter",         minval=10, group=gT)
 adxLen  = input.int(14,   "ADX length",               minval=2,  group=gT)
 adxMin  = input.float(20, "ADX minimum for 'trending'", minval=0, group=gT)
 
-gV = "2 · Volatility"
+gV = "2. Volatility"
 atrLen   = input.int(14,    "ATR length",               minval=2,  group=gV)
 rvLen    = input.int(24,    "Realised-vol window",      minval=5,  group=gV)
 rankLen  = input.int(500,   "Vol percentile window",    minval=50, group=gV)
 volMin   = input.float(0.35,"Min vol percentile (0-1)", minval=0, maxval=1, step=0.05, group=gV)
 stopMult = input.float(2.0, "Stop distance (x ATR)",    minval=0.2, step=0.1, group=gV)
 
-gM = "3 · Macro context"
+gM = "3. Macro context"
 useMacro = input.bool(true,         "Apply macro filter",   group=gM)
 dxySym   = input.symbol("TVC:DXY",  "Dollar index",         group=gM)
 eqSym    = input.symbol("NASDAQ:NDX","Equity risk proxy",   group=gM)
 macroLen = input.int(50,            "Macro trend length",   minval=2, group=gM)
 
-gP = "4 · Positioning proxy"
+gP = "4. Positioning proxy"
 usePos  = input.bool(true,                 "Show dominance / stablecoin context", group=gP)
 domSym  = input.symbol("CRYPTOCAP:BTC.D",  "BTC dominance",   group=gP)
 usdtSym = input.symbol("CRYPTOCAP:USDT.D", "USDT dominance",  group=gP)
 
-gR = "5 · Risk sizing"
+gR = "5. Risk sizing"
 acct    = input.float(100, "Account size ($)",      minval=1, group=gR)
 riskPct = input.float(1.0, "Risk per trade (%)",    minval=0.1, maxval=5, step=0.1, group=gR)
 minNot  = input.float(5.0, "Venue min notional ($)", minval=0, group=gR)
 
-gS = "6 · Display"
+gS = "6. Display"
 showLevels = input.bool(true, "Plot breakout levels", group=gS)
 showTable  = input.bool(true, "Show dashboard",       group=gS)
 
@@ -97,14 +97,27 @@ aboveTrend = close > emaVal
 bullAligned = trending and aboveTrend and diPlus > diMinus
 bearAligned = trending and close < emaVal and diMinus > diPlus
 
-regimeTxt = not trending ? "RANGE / SIDEWAYS" :
-            bullAligned  ? "BULL (aligned)"   :
-            bearAligned  ? "BEAR (aligned)"   :
-            aboveTrend   ? "BULL, weakening"  : "BEAR, weakening"
+// Written as if/else rather than a multi-line ternary on purpose: Pine treats a
+// continuation line indented by a multiple of 4 as a new block, which throws
+// "end of line without line continuation" and points at the wrong line.
+// if/else has no continuation lines at all, so editing it cannot reintroduce that.
+string regimeTxt = "RANGE / SIDEWAYS"
+if bullAligned
+    regimeTxt := "BULL (aligned)"
+else if bearAligned
+    regimeTxt := "BEAR (aligned)"
+else if trending and aboveTrend
+    regimeTxt := "BULL, weakening"
+else if trending
+    regimeTxt := "BEAR, weakening"
 
-volTxt = rvRank > 0.80 ? "HIGH" :
-         rvRank > 0.55 ? "ELEVATED" :
-         rvRank > 0.25 ? "NORMAL" : "COMPRESSED"
+string volTxt = "COMPRESSED"
+if rvRank > 0.80
+    volTxt := "HIGH"
+else if rvRank > 0.55
+    volTxt := "ELEVATED"
+else if rvRank > 0.25
+    volTxt := "NORMAL"
 
 // -------------------------------------------------------------- the signal ---
 // Long-only: spot BTC cannot be shorted without borrowing.
@@ -136,9 +149,14 @@ plot(showLevels ? dcLower : na, "Donchian lower", color=color.new(color.maroon, 
 plot(longSetup ? stopPx : na, "Stop if entered", color=color.new(color.red, 30),
      style=plot.style_cross, linewidth=1)
 
-bgcolor(bullAligned ? color.new(color.green, 94) :
-        bearAligned ? color.new(color.red,   94) :
-        not trending ? color.new(color.gray, 96) : na, title="Regime shading")
+color regimeBg = na
+if bullAligned
+    regimeBg := color.new(color.green, 94)
+else if bearAligned
+    regimeBg := color.new(color.red, 94)
+else if not trending
+    regimeBg := color.new(color.gray, 96)
+bgcolor(regimeBg, title="Regime shading")
 
 plotshape(longSignal, "Long setup", shape.triangleup, location.belowbar,
           color.new(color.lime, 0), size=size.small)
@@ -174,7 +192,7 @@ if showTable and barstate.islast
           rvRank > 0.80 ? color.orange : rvRank < 0.25 ? color.blue : color.green)
     f_row(4, "ATR", str.tostring(atrPct, "#.00") + "% of price", color.gray)
     f_row(5, "Dollar (DXY)", not dxyKnown ? "stale / closed" :
-          dollarHeadwind ? "RISING — headwind" : "falling — tailwind",
+          dollarHeadwind ? "RISING - headwind" : "falling - tailwind",
           not dxyKnown ? color.gray : dollarHeadwind ? color.red : color.green)
     f_row(6, "Equities", not eqKnown ? "stale / closed" :
           equityRiskOn ? "risk-on" : "risk-off",
