@@ -1,0 +1,190 @@
+//@version=5
+// =============================================================================
+// BTC Regime Dashboard  —  v1
+//
+// Purpose: show, on one chart, the drivers of BTC price that are ACTUALLY
+// measurable from a TradingView data feed, and mark when they line up.
+//
+// Design notes:
+//  - Signals are evaluated on CONFIRMED bars only (barstate.isconfirmed), so
+//    nothing repaints. An indicator that repaints will show you a beautiful
+//    history that you could never have traded.
+//  - The Donchian channel EXCLUDES the current bar ([1]). Without that, "close
+//    breaks above the N-bar high" is a tautology — the current high is always
+//    inside the unshifted channel.
+//  - request.security() uses lookahead_off. The default is already off in v5,
+//    but it is stated explicitly because getting it wrong is the single most
+//    common cause of a fake backtest in Pine.
+//  - DXY and NDX do not trade 24/7 while BTC does. On weekends their values go
+//    STALE (last close holds). That is handled as "unknown", not as a signal.
+// =============================================================================
+
+indicator("BTC Regime Dashboard", shorttitle="BTC Regime", overlay=true)
+
+// ----------------------------------------------------------------- inputs ----
+gT = "1 · Trend structure"
+donLen  = input.int(55,   "Donchian lookback (bars)", minval=5,  group=gT)
+emaLen  = input.int(200,  "EMA trend filter",         minval=10, group=gT)
+adxLen  = input.int(14,   "ADX length",               minval=2,  group=gT)
+adxMin  = input.float(20, "ADX minimum for 'trending'", minval=0, group=gT)
+
+gV = "2 · Volatility"
+atrLen   = input.int(14,    "ATR length",               minval=2,  group=gV)
+rvLen    = input.int(24,    "Realised-vol window",      minval=5,  group=gV)
+rankLen  = input.int(500,   "Vol percentile window",    minval=50, group=gV)
+volMin   = input.float(0.35,"Min vol percentile (0-1)", minval=0, maxval=1, step=0.05, group=gV)
+stopMult = input.float(2.0, "Stop distance (x ATR)",    minval=0.2, step=0.1, group=gV)
+
+gM = "3 · Macro context"
+useMacro = input.bool(true,         "Apply macro filter",   group=gM)
+dxySym   = input.symbol("TVC:DXY",  "Dollar index",         group=gM)
+eqSym    = input.symbol("NASDAQ:NDX","Equity risk proxy",   group=gM)
+macroLen = input.int(50,            "Macro trend length",   minval=2, group=gM)
+
+gP = "4 · Positioning proxy"
+usePos  = input.bool(true,                 "Show dominance / stablecoin context", group=gP)
+domSym  = input.symbol("CRYPTOCAP:BTC.D",  "BTC dominance",   group=gP)
+usdtSym = input.symbol("CRYPTOCAP:USDT.D", "USDT dominance",  group=gP)
+
+gR = "5 · Risk sizing"
+acct    = input.float(100, "Account size ($)",      minval=1, group=gR)
+riskPct = input.float(1.0, "Risk per trade (%)",    minval=0.1, maxval=5, step=0.1, group=gR)
+minNot  = input.float(5.0, "Venue min notional ($)", minval=0, group=gR)
+
+gS = "6 · Display"
+showLevels = input.bool(true, "Plot breakout levels", group=gS)
+showTable  = input.bool(true, "Show dashboard",       group=gS)
+
+// ------------------------------------------------------------ calculations ---
+// Trend structure
+dcUpper = ta.highest(high, donLen)[1]       // prior N-bar high, current bar excluded
+dcLower = ta.lowest(low,  donLen)[1]
+emaVal  = ta.ema(close, emaLen)
+[diPlus, diMinus, adxVal] = ta.dmi(adxLen, adxLen)
+
+// Volatility
+atrVal  = ta.atr(atrLen)
+logRet  = math.log(close / close[1])
+rvAnn   = ta.stdev(logRet, rvLen) * math.sqrt(8760) * 100     // annualised %, 1h bars
+rvRank  = ta.percentrank(rvAnn, rankLen) / 100.0              // 0..1
+atrPct  = atrVal / close * 100
+
+// Macro — fetched on the chart's own timeframe, no lookahead
+dxyC  = request.security(dxySym, timeframe.period, close, lookahead=barmerge.lookahead_off)
+dxyMA = request.security(dxySym, timeframe.period, ta.ema(close, macroLen), lookahead=barmerge.lookahead_off)
+eqC   = request.security(eqSym,  timeframe.period, close, lookahead=barmerge.lookahead_off)
+eqMA  = request.security(eqSym,  timeframe.period, ta.ema(close, macroLen), lookahead=barmerge.lookahead_off)
+
+// Staleness: these markets are closed while BTC trades. Treat unchanged-for-
+// many-bars as "no information" rather than as a reading.
+dxyStale = dxyC == dxyC[1] and dxyC[1] == dxyC[2] and dxyC[2] == dxyC[3]
+dxyKnown = not na(dxyC) and not na(dxyMA) and not dxyStale
+eqKnown  = not na(eqC)  and not na(eqMA)
+
+dollarHeadwind = dxyKnown and dxyC > dxyMA      // rising dollar = BTC headwind
+equityRiskOn   = eqKnown  and eqC  > eqMA
+
+// Positioning proxies
+btcDom  = usePos ? request.security(domSym,  timeframe.period, close, lookahead=barmerge.lookahead_off) : na
+usdtDom = usePos ? request.security(usdtSym, timeframe.period, close, lookahead=barmerge.lookahead_off) : na
+// Falling USDT dominance = stablecoins rotating INTO risk assets.
+usdtFalling = usePos and not na(usdtDom) and usdtDom < ta.ema(usdtDom, macroLen)
+
+// ------------------------------------------------------------------ regime ---
+trending   = adxVal >= adxMin
+volOk      = rvRank >= volMin
+aboveTrend = close > emaVal
+bullAligned = trending and aboveTrend and diPlus > diMinus
+bearAligned = trending and close < emaVal and diMinus > diPlus
+
+regimeTxt = not trending ? "RANGE / SIDEWAYS" :
+            bullAligned  ? "BULL (aligned)"   :
+            bearAligned  ? "BEAR (aligned)"   :
+            aboveTrend   ? "BULL, weakening"  : "BEAR, weakening"
+
+volTxt = rvRank > 0.80 ? "HIGH" :
+         rvRank > 0.55 ? "ELEVATED" :
+         rvRank > 0.25 ? "NORMAL" : "COMPRESSED"
+
+// -------------------------------------------------------------- the signal ---
+// Long-only: spot BTC cannot be shorted without borrowing.
+macroOk   = not useMacro or not dollarHeadwind
+breakout  = close > dcUpper
+longSetup = trending and volOk and aboveTrend and breakout and macroOk
+
+// Fire once on the FIRST bar of a new setup, and only once that bar has closed.
+// This is what keeps the plot honest — no repainting.
+longSignal = longSetup and not longSetup[1] and barstate.isconfirmed
+
+// --------------------------------------------------------------- position ----
+stopDist = stopMult * atrVal
+stopPx   = close - stopDist
+riskAmt  = acct * riskPct / 100.0
+qty      = stopDist > 0 ? riskAmt / stopDist : 0.0
+notional = qty * close
+sizeOk   = notional >= minNot and notional <= acct      // spot, no leverage
+// If the stop is tight, notional exceeds cash: shrink to the cash available.
+qtyAdj   = notional > acct ? acct / close : qty
+riskAdj  = qtyAdj * stopDist
+
+// ------------------------------------------------------------------- plots ---
+plot(emaVal, "EMA trend", color=color.new(color.orange, 0), linewidth=2)
+plot(showLevels ? dcUpper : na, "Donchian upper", color=color.new(color.teal, 0),
+     style=plot.style_stepline)
+plot(showLevels ? dcLower : na, "Donchian lower", color=color.new(color.maroon, 0),
+     style=plot.style_stepline)
+plot(longSetup ? stopPx : na, "Stop if entered", color=color.new(color.red, 30),
+     style=plot.style_cross, linewidth=1)
+
+bgcolor(bullAligned ? color.new(color.green, 94) :
+        bearAligned ? color.new(color.red,   94) :
+        not trending ? color.new(color.gray, 96) : na, title="Regime shading")
+
+plotshape(longSignal, "Long setup", shape.triangleup, location.belowbar,
+          color.new(color.lime, 0), size=size.small)
+plotshape(longSetup and not macroOk and barstate.isconfirmed, "Blocked by dollar",
+          shape.xcross, location.belowbar, color.new(color.orange, 0), size=size.tiny)
+
+// ------------------------------------------------------------------ alerts ---
+alertcondition(longSignal, "BTC long setup",
+     "BTC: Donchian breakout with ADX, vol and macro aligned")
+alertcondition(longSetup and not sizeOk, "Size not viable",
+     "BTC: setup valid but position size fails the notional check")
+
+// --------------------------------------------------------------- dashboard ---
+var table dash = table.new(position.top_right, 2, 11, border_width=1,
+                           frame_color=color.new(color.gray, 50), frame_width=1)
+
+f_row(_r, _label, _val, _col) =>
+    table.cell(dash, 0, _r, _label, text_size=size.small, text_halign=text.align_left,
+               text_color=color.new(color.gray, 0))
+    table.cell(dash, 1, _r, _val, text_size=size.small, text_halign=text.align_right,
+               text_color=_col)
+
+if showTable and barstate.islast
+    table.cell(dash, 0, 0, "BTC REGIME", text_size=size.normal, text_color=color.white,
+               bgcolor=color.new(color.blue, 40))
+    table.cell(dash, 1, 0, syminfo.ticker + " " + timeframe.period, text_size=size.normal,
+               text_color=color.white, bgcolor=color.new(color.blue, 40))
+
+    f_row(1, "Trend", regimeTxt, bullAligned ? color.green : bearAligned ? color.red : color.gray)
+    f_row(2, "ADX", str.tostring(adxVal, "#.0") + (trending ? "  ok" : "  weak"),
+          trending ? color.green : color.gray)
+    f_row(3, "Volatility", volTxt + "  (" + str.tostring(rvRank * 100, "#") + "th pct)",
+          rvRank > 0.80 ? color.orange : rvRank < 0.25 ? color.blue : color.green)
+    f_row(4, "ATR", str.tostring(atrPct, "#.00") + "% of price", color.gray)
+    f_row(5, "Dollar (DXY)", not dxyKnown ? "stale / closed" :
+          dollarHeadwind ? "RISING — headwind" : "falling — tailwind",
+          not dxyKnown ? color.gray : dollarHeadwind ? color.red : color.green)
+    f_row(6, "Equities", not eqKnown ? "stale / closed" :
+          equityRiskOn ? "risk-on" : "risk-off",
+          not eqKnown ? color.gray : equityRiskOn ? color.green : color.red)
+    f_row(7, "Stablecoins", not usePos or na(usdtDom) ? "n/a" :
+          usdtFalling ? "rotating into risk" : "parked in cash",
+          usdtFalling ? color.green : color.gray)
+    f_row(8, "Breakout level", str.tostring(dcUpper, format.mintick), color.teal)
+    f_row(9, "Stop if entered", str.tostring(stopPx, format.mintick) +
+          "  (" + str.tostring(stopDist / close * 100, "#.00") + "%)", color.red)
+    f_row(10, "Size @ " + str.tostring(riskPct, "#.#") + "%",
+          str.tostring(qtyAdj, "#.######") + " = $" + str.tostring(qtyAdj * close, "#.##") +
+          (sizeOk ? "" : "  CHECK"), sizeOk ? color.white : color.orange)
