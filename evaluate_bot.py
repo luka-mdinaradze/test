@@ -41,6 +41,9 @@ CRITERIA = [
     ("mc_prob_ruin",    "MC P(-50% account)",          "<=", 2.0,   "hard"),
     ("edge_cost_ratio", "Gross edge / cost per trade", ">=", 3.0,   "soft"),
     ("trades_per_year", "Trades per year",             ">=", 20.0,  "soft"),
+    # Established in validate_strategy.py on worlds of known structure: below a
+    # 24h variance ratio of ~1.05 this strategy cannot cover its own friction.
+    ("variance_ratio_24", "24h variance ratio",        ">=", 1.05,  "hard"),
 ]
 
 
@@ -80,6 +83,31 @@ def main() -> int:
     if synth:
         print("\n*** SYNTHETIC DATA - the verdict below is about the simulator, not BTC ***")
     print("=" * 84)
+
+    # ---- 0. market precondition ---------------------------------------
+    # validate_strategy.py established, on worlds with known structure, that
+    # this strategy needs a 24h variance ratio above ~1.05 to cover its costs.
+    # That makes the market itself checkable BEFORE any backtest runs.
+    def variance_ratio(close: pd.Series, q: int = 24) -> float:
+        r = np.diff(np.log(close.to_numpy()))
+        v1 = r.var(ddof=1)
+        rq = np.add.reduceat(r, np.arange(0, len(r) - len(r) % q, q))
+        return float(rq.var(ddof=1) / (q * v1)) if v1 > 0 else np.nan
+
+    VR_REQUIRED = 1.05
+    print("\n[0/3] MARKET PRECONDITION - does this market even hold the edge?")
+    vr_all = {q: variance_ratio(df["close"], q) for q in (6, 24, 72, 168)}
+    for q, v in vr_all.items():
+        tag = "trending" if v > 1.02 else ("mean-reverting" if v < 0.98 else "random walk")
+        print(f"  variance ratio ({q:>3}h)  {v:.3f}   {tag}")
+    vr24 = vr_all[24]
+    vr_ok = np.isfinite(vr24) and vr24 >= VR_REQUIRED
+    print(f"  required for this strategy to cover costs: >= {VR_REQUIRED:.2f}")
+    print(f"  {'PASS' if vr_ok else 'FAIL'} - measured {vr24:.3f}")
+    if not vr_ok:
+        print("  A variance ratio below the threshold means the market does not hold")
+        print("  enough trend persistence to pay this strategy's friction. Expect the")
+        print("  backtest below to confirm it.")
 
     # ---- 1. baseline backtest -----------------------------------------
     p = S1Params(allow_short=False)
@@ -147,6 +175,7 @@ def main() -> int:
         "mc_prob_ruin": mc["prob_ruin"] * 100,
         "edge_cost_ratio": gross_exp / cost_R if cost_R > 0 else np.inf,
         "trades_per_year": float(s["trades_per_year"]),
+        "variance_ratio_24": vr24,
     }
 
     print("\n" + "=" * 84)
