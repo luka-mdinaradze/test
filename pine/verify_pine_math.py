@@ -79,9 +79,14 @@ def main():
     mirror = pine_mirror(tv, train_profiles(NQ_MARKET, tf), tf, flat_d,
                          frozen["candidates"]["A"]["params"], frozen["candidates"]["B"]["params"])
     start = tv.index[3000]                       # skip warm-up, where seeding differs
+    entry_ok = m1["entry_ok"].to_numpy()
     for fam in ("A", "B"):
         s = from_candidate(f, tf, frozen["candidates"][fam], th)
-        py = pd.Index(f.index[s.meta["bar"].to_numpy()])
+        # compare TRADEABLE triggers: the engine rejects a signal whose next minute
+        # is outside the entry window, and the Pine script never emits one
+        nxt = np.minimum(s.idx + 1, len(entry_ok) - 1)
+        tradeable = entry_ok[nxt] & (m1["tday"].to_numpy()[nxt] == m1["tday"].to_numpy()[s.idx])
+        py = pd.Index(f.index[s.meta["bar"].to_numpy()[tradeable]])
         py, pi = py[py >= start], mirror[fam][mirror[fam] >= start]
         both = len(py.intersection(pi))
         print(f"{fam}: python {len(py)} triggers, pine-mirror {len(pi)}, common {both} "

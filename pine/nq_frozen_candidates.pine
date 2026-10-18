@@ -9,13 +9,15 @@
 // be inspected and PAPER-traded; their backtests here are not evidence of edge.
 //
 // Chart: CME_MINI:MNQ1! (or NQ1!) on the 15-minute timeframe, ETH session on,
-// exchange time zone. Trigger agreement with the Python engine on 2023-2025 data
-// (pine/verify_pine_math.py): A 99.2%, B 100%. Differences from the Python engine:
+// exchange time zone. pine/verify_pine_math.py reproduces 100% of the Python
+// engine's tradeable triggers on 2023-2025 data. Differences from the Python engine:
 //   * fills are resolved on chart bars — enable Bar Magnifier (Premium) for
 //     1-minute intrabar resolution; Python books the STOP when one minute
 //     touches both stop and target
 //   * ta.rma seeds the ATR with an SMA (warm-up only)
 //   * time and session exits fill at the next bar's open
+//   * on exchange early-close days the Python engine knows the session ends; check
+//     that session.islastbar fires on your chart's holiday sessions before relying on it
 // =============================================================================
 strategy("NQ frozen candidates (NOT VALIDATED - NO TRADE)", overlay=true, initial_capital=5000,
      commission_type=strategy.commission.cash_per_contract, commission_value=0.62,
@@ -119,7 +121,9 @@ cUseA = (rth and C_RTH == "A") or (not rth and C_ETH == "A")
 cUseB = (rth and C_RTH == "B") or (not rth and C_ETH == "B")
 
 nextD = dmin + TF_MIN
-entryWindow = nextD >= NO_FIRST and nextD < FLAT_D - NO_LAST
+// session.islastbar also blocks the last bar of an exchange early-close day
+// (e.g. Christmas Eve), where an order would otherwise fill at the NEXT session's open
+entryWindow = nextD >= NO_FIRST and nextD < FLAT_D - NO_LAST and not session.islastbar
 isA = mode == "Research: A trend" or (mode == "Research: C session router" and cUseA)
 isB = mode == "Research: B mean reversion" or (mode == "Research: C session router" and cUseB)
 goLong = entryWindow and ((isA and aLong) or (isB and bLong and not (isA and aShort)))
