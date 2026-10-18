@@ -48,19 +48,23 @@ def require_committed(path: Path):
 
 
 def equity_chart(curves: dict, splits: list, path: Path, title: str):
+    """One panel per candidate (shared time axis), so a large loser cannot hide the rest."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    fig, ax = plt.subplots(figsize=(11, 4.5))
-    for name, s in curves.items():
-        ax.plot(s.index, s.to_numpy(), label=name, lw=1.4)
+    fig, axes = plt.subplots(len(curves), 1, figsize=(11, 2.4 * len(curves) + 0.6), sharex=True, squeeze=False)
+    for ax, (name, s) in zip(axes[:, 0], curves.items()):
+        ax.plot(s.index, s.to_numpy(), lw=1.3, color="#2b6cb0")
+        ax.axhline(0, color="0.2", lw=0.6)
+        for x, lbl in splits:
+            ax.axvline(x, color="0.55", lw=0.8, ls="--")
+        ax.set_ylabel("cum. R", fontsize=8)
+        ax.set_title(name, fontsize=9, loc="left")
+        ax.tick_params(labelsize=8)
+    top = axes[0, 0]
     for x, lbl in splits:
-        ax.axvline(x, color="0.5", lw=0.8, ls="--")
-        ax.text(x, ax.get_ylim()[1], f" {lbl}", va="top", fontsize=8, color="0.35")
-    ax.axhline(0, color="0.2", lw=0.6)
-    ax.set_ylabel("cumulative R (after costs)")
-    ax.set_title(title, fontsize=10)
-    ax.legend(fontsize=8, frameon=False)
+        top.text(x, 1.02, f" {lbl}", transform=top.get_xaxis_transform(), fontsize=8, color="0.35")
+    fig.suptitle(title, fontsize=10)
     fig.tight_layout()
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=130)
