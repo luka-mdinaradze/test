@@ -179,3 +179,23 @@ def entry_methods(f: pd.DataFrame, m1_vwap_dev: np.ndarray, tf: int, train: np.n
 
 def params_dict(p) -> dict:
     return asdict(p)
+
+
+def from_candidate(f: pd.DataFrame, tf: int, cand: dict, th=None) -> Signals:
+    """Rebuild a frozen candidate's signal stream (A, B, or C1/C2) from its definition.
+
+    `th` are the regime thresholds fitted on TRAIN data (needed by C1 only).
+    """
+    from . import regime
+    if "params" in cand:
+        p = cand["params"]
+        if "tau" in p:
+            return strategy_a(f, tf, AParams(**p))
+        return strategy_b(f, tf, BParams(**p))
+    pa, pb = AParams(**cand["A"]), BParams(**cand["B"])
+    if cand["variant"] == "C1":
+        blocked = (regime.change_points(f) == 1) | (regime.vol_tercile(f, th) == 3)
+        return strategy_c(f, tf, pa, pb, regime.rule_regime(f, th, "vr"), blocked)
+    to = {"A": regime.TREND, "B": regime.RANGE, "NONE": regime.NEUTRAL}
+    lbl = np.where(f["rth"].to_numpy(), to[cand["route"]["RTH"]], to[cand["route"]["ETH"]])
+    return strategy_c(f, tf, pa, pb, lbl)
