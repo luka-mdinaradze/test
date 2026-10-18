@@ -99,3 +99,14 @@ def test_variance_ratio_z_is_standard_normal_under_iid():
     for i in range(1, len(e)):
         ar[i] = 0.05 * ar[i - 1] + e[i]
     assert stats_tests.lo_mackinlay(ar, 4)["z"] > 5      # weak persistence, large sample: detected
+
+
+def test_ljung_box_matches_statsmodels():
+    from statsmodels.stats.diagnostic import acorr_ljungbox
+    from nqlab import stats_tests
+    rng = np.random.default_rng(8)
+    x = rng.standard_normal(3000)
+    x[1:] += 0.1 * x[:-1]
+    q, p = stats_tests.ljung_box(x, 10)
+    ref = acorr_ljungbox(x, lags=[10], return_df=True)
+    assert abs(q - ref["lb_stat"].iloc[0]) < 1e-6 * q and abs(p - ref["lb_pvalue"].iloc[0]) < 1e-9

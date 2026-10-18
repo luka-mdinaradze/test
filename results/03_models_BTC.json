@@ -1,0 +1,4497 @@
+{
+  "market": "BTC",
+  "garch": {
+    "1": {
+      "omega": 5.587067558869515,
+      "alpha": 0.1,
+      "beta": 0.88,
+      "nu": 4.169592263950795,
+      "persistence": 0.98
+    },
+    "5": {
+      "omega": 54.45619758995157,
+      "alpha": 0.2,
+      "beta": 0.78,
+      "nu": 4.197112643920334,
+      "persistence": 0.98
+    },
+    "15": {
+      "omega": 266.01828383857793,
+      "alpha": 0.2232346291562042,
+      "beta": 0.7665607520420069,
+      "nu": 3.9538905647936575,
+      "persistence": 0.9897953811982111
+    },
+    "60": {
+      "omega": 791.1556038442101,
+      "alpha": 0.13619015731351938,
+      "beta": 0.855174043072753,
+      "nu": 3.364351096834929,
+      "persistence": 0.9913642003862724
+    }
+  },
+  "vol_forecast": [
+    {
+      "tf": 1,
+      "model": "atr",
+      "qlike_train": 15.046616035787748,
+      "qlike_test": 18.404031532368506,
+      "mz_r2_test": 0.3438945553597002,
+      "scale_k": 814.3775681648335,
+      "qlike_gain_vs_atr_pct": 0.0
+    },
+    {
+      "tf": 1,
+      "model": "ewma",
+      "qlike_train": 1.6185669275471575,
+      "qlike_test": 1.5178155459210316,
+      "mz_r2_test": 0.32965665964658925,
+      "scale_k": 1.075236704300205,
+      "qlike_gain_vs_atr_pct": 91.75280946866702
+    },
+    {
+      "tf": 1,
+      "model": "seasonal",
+      "qlike_train": 1.5981731294716066,
+      "qlike_test": 1.5162848569696044,
+      "mz_r2_test": 0.33264208110318033,
+      "scale_k": 1.073218169460634,
+      "qlike_gain_vs_atr_pct": 91.76112660803257
+    },
+    {
+      "tf": 1,
+      "model": "garch",
+      "qlike_train": 1.5871793091906705,
+      "qlike_test": 1.5030349104719252,
+      "mz_r2_test": 0.34884140779309303,
+      "scale_k": 1.1038300924478208,
+      "qlike_gain_vs_atr_pct": 91.83312141240125
+    },
+    {
+      "tf": 5,
+      "model": "atr",
+      "qlike_train": 1.6956738101280229,
+      "qlike_test": 1.5706022422385915,
+      "mz_r2_test": 0.3092771154521365,
+      "scale_k": 0.8357374307423792,
+      "qlike_gain_vs_atr_pct": 0.0
+    },
+    {
+      "tf": 5,
+      "model": "ewma",
+      "qlike_train": 1.6835713559010432,
+      "qlike_test": 1.604069003946477,
+      "mz_r2_test": 0.28287446163263574,
+      "scale_k": 1.074642802487098,
+      "qlike_gain_vs_atr_pct": -2.1308235024664803
+    },
+    {
+      "tf": 5,
+      "model": "seasonal",
+      "qlike_train": 1.6512003424522843,
+      "qlike_test": 1.5821088252893267,
+      "mz_r2_test": 0.29296142447680706,
+      "scale_k": 1.0746906528796496,
+      "qlike_gain_vs_atr_pct": -0.7326223496494467
+    },
+    {
+      "tf": 5,
+      "model": "garch",
+      "qlike_train": 1.6787435410249025,
+      "qlike_test": 1.5752105756087376,
+      "mz_r2_test": 0.30782800452346065,
+      "scale_k": 1.1382029979426527,
+      "qlike_gain_vs_atr_pct": -0.2934118675125414
+    },
+    {
+      "tf": 15,
+      "model": "atr",
+      "qlike_train": 1.7227704913069213,
+      "qlike_test": 1.6570691464018648,
+      "mz_r2_test": 0.2828849942341079,
+      "scale_k": 0.7580511103934459,
+      "qlike_gain_vs_atr_pct": 0.0
+    },
+    {
+      "tf": 15,
+      "model": "ewma",
+      "qlike_train": 1.7599927610459631,
+      "qlike_test": 1.7233405479760282,
+      "mz_r2_test": 0.2525092921701855,
+      "scale_k": 1.072208799628995,
+      "qlike_gain_vs_atr_pct": -3.999314193862349
+    },
+    {
+      "tf": 15,
+      "model": "seasonal",
+      "qlike_train": 1.714340882216669,
+      "qlike_test": 1.6717868074003535,
+      "mz_r2_test": 0.27008455444346635,
+      "scale_k": 1.0748169591274193,
+      "qlike_gain_vs_atr_pct": -0.8881742219657165
+    },
+    {
+      "tf": 15,
+      "model": "garch",
+      "qlike_train": 1.7653930658956805,
+      "qlike_test": 1.6517066769483995,
+      "mz_r2_test": 0.28541896980174514,
+      "scale_k": 1.0932594543351566,
+      "qlike_gain_vs_atr_pct": 0.32361168905409216
+    },
+    {
+      "tf": 60,
+      "model": "atr",
+      "qlike_train": 1.8660529576688991,
+      "qlike_test": 2.0439249616530217,
+      "mz_r2_test": 0.2280864982056616,
+      "scale_k": 0.7279698284689597,
+      "qlike_gain_vs_atr_pct": 0.0
+    },
+    {
+      "tf": 60,
+      "model": "ewma",
+      "qlike_train": 1.8945852888076418,
+      "qlike_test": 2.133449345582958,
+      "mz_r2_test": 0.1986236560991614,
+      "scale_k": 1.0638048687733526,
+      "qlike_gain_vs_atr_pct": -4.380023024795073
+    },
+    {
+      "tf": 60,
+      "model": "seasonal",
+      "qlike_train": 1.8473226196458656,
+      "qlike_test": 2.053510868320508,
+      "mz_r2_test": 0.21905827868458055,
+      "scale_k": 1.0718730990604575,
+      "qlike_gain_vs_atr_pct": -0.46899503882636606
+    },
+    {
+      "tf": 60,
+      "model": "garch",
+      "qlike_train": 1.8853582065706753,
+      "qlike_test": 1.918647601651489,
+      "mz_r2_test": 0.23825800036295394,
+      "scale_k": 1.0564359375020111,
+      "qlike_gain_vs_atr_pct": 6.12925436852705
+    }
+  ],
+  "stop_unit": [
+    {
+      "tf": 1,
+      "family": "A",
+      "stop_unit": "atr",
+      "signals": 5801,
+      "exp_r": -0.6128240486111582,
+      "ci_lo": -0.6375145506664388,
+      "ci_hi": -0.5878348251293515,
+      "r_std": 0.6844539529555566,
+      "stopped_within_1_bar": 0.36786760903292537
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "stop_unit": "seasonal",
+      "signals": 5801,
+      "exp_r": -0.6087367795357125,
+      "ci_lo": -0.6314717380185291,
+      "ci_hi": -0.5858822180790921,
+      "r_std": 0.668829542350399,
+      "stopped_within_1_bar": 0.36924668160661955
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "stop_unit": "atr",
+      "signals": 27554,
+      "exp_r": -0.6483077290478321,
+      "ci_lo": -0.6625728259361854,
+      "ci_hi": -0.6338116285533336,
+      "r_std": 0.5876963183937367,
+      "stopped_within_1_bar": 0.3142556434637439
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "stop_unit": "seasonal",
+      "signals": 27554,
+      "exp_r": -0.6227698506637581,
+      "ci_lo": -0.6361772536525986,
+      "ci_hi": -0.6096232426970366,
+      "r_std": 0.5963631893484945,
+      "stopped_within_1_bar": 0.2545184002322712
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "stop_unit": "atr",
+      "signals": 1131,
+      "exp_r": -0.3893632124518561,
+      "ci_lo": -0.45145714102607737,
+      "ci_hi": -0.3287412261093352,
+      "r_std": 0.9473894314714485,
+      "stopped_within_1_bar": 0.18037135278514588
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "stop_unit": "seasonal",
+      "signals": 1131,
+      "exp_r": -0.37697199356504,
+      "ci_lo": -0.43968490694160856,
+      "ci_hi": -0.31499563800336067,
+      "r_std": 0.9481473023451379,
+      "stopped_within_1_bar": 0.1724137931034483
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "stop_unit": "atr",
+      "signals": 5750,
+      "exp_r": -0.396706114187768,
+      "ci_lo": -0.4209931553403543,
+      "ci_hi": -0.3727580405109326,
+      "r_std": 0.838389648015239,
+      "stopped_within_1_bar": 0.144
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "stop_unit": "seasonal",
+      "signals": 5750,
+      "exp_r": -0.36234530177084195,
+      "ci_lo": -0.3877672804646046,
+      "ci_hi": -0.3378745330384603,
+      "r_std": 0.8455990666731062,
+      "stopped_within_1_bar": 0.1191304347826087
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "stop_unit": "atr",
+      "signals": 419,
+      "exp_r": -0.048408518365521847,
+      "ci_lo": -0.16632206439338068,
+      "ci_hi": 0.07632678157044973,
+      "r_std": 1.143052176682703,
+      "stopped_within_1_bar": 0.13842482100238662
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "stop_unit": "seasonal",
+      "signals": 419,
+      "exp_r": -0.060578122439406364,
+      "ci_lo": -0.17900361365834352,
+      "ci_hi": 0.06269438964873013,
+      "r_std": 1.1342109070725468,
+      "stopped_within_1_bar": 0.13126491646778043
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "stop_unit": "atr",
+      "signals": 2019,
+      "exp_r": -0.22711141872193133,
+      "ci_lo": -0.27456058267754563,
+      "ci_hi": -0.17883655952777147,
+      "r_std": 0.97914534432,
+      "stopped_within_1_bar": 0.16394254581475978
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "stop_unit": "seasonal",
+      "signals": 2019,
+      "exp_r": -0.20874792008252466,
+      "ci_lo": -0.2545561621035781,
+      "ci_hi": -0.16192748216611408,
+      "r_std": 0.9736905605155278,
+      "stopped_within_1_bar": 0.133234274393264
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "stop_unit": "atr",
+      "signals": 112,
+      "exp_r": -0.029427005685989455,
+      "ci_lo": -0.26150614856562476,
+      "ci_hi": 0.19860713550938686,
+      "r_std": 1.0654493704622279,
+      "stopped_within_1_bar": 0.10714285714285714
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "stop_unit": "seasonal",
+      "signals": 112,
+      "exp_r": -0.04312662217099655,
+      "ci_lo": -0.2753058670158642,
+      "ci_hi": 0.1894308332755994,
+      "r_std": 1.0641526692911973,
+      "stopped_within_1_bar": 0.13392857142857142
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "stop_unit": "atr",
+      "signals": 537,
+      "exp_r": -0.18895934685322954,
+      "ci_lo": -0.27600022879028197,
+      "ci_hi": -0.10354940726586795,
+      "r_std": 0.9663031694521127,
+      "stopped_within_1_bar": 0.2085661080074488
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "stop_unit": "seasonal",
+      "signals": 537,
+      "exp_r": -0.16151972881876753,
+      "ci_lo": -0.2402232123423241,
+      "ci_hi": -0.08215511150351457,
+      "r_std": 0.9384946168306332,
+      "stopped_within_1_bar": 0.1750465549348231
+    }
+  ],
+  "regime_forward": [
+    {
+      "tf": 1,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "share": 0.10417814896409847,
+      "fwd_vr_minus_1": -0.2816946678642997,
+      "t": -23.681041033351082,
+      "fwd_vol_vs_fcst": 0.7692157808787854
+    },
+    {
+      "tf": 1,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "share": 0.4832321355921795,
+      "fwd_vr_minus_1": -0.2998289262269093,
+      "t": -59.001999431797216,
+      "fwd_vol_vs_fcst": 0.75108701102482
+    },
+    {
+      "tf": 1,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "share": 0.412589715443722,
+      "fwd_vr_minus_1": -0.29218011422109036,
+      "t": -57.19948155674531,
+      "fwd_vol_vs_fcst": 0.800323252875428
+    },
+    {
+      "tf": 1,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "share": 0.15563261874737286,
+      "fwd_vr_minus_1": -0.237686736412869,
+      "t": -16.544623982687263,
+      "fwd_vol_vs_fcst": 0.7476551246528493
+    },
+    {
+      "tf": 1,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "share": 0.5188811188811189,
+      "fwd_vr_minus_1": -0.2539959378159914,
+      "t": -26.713814878894883,
+      "fwd_vol_vs_fcst": 0.7464791787420454
+    },
+    {
+      "tf": 1,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "share": 0.3254862623715083,
+      "fwd_vr_minus_1": -0.23545129657282438,
+      "t": -23.516205344195267,
+      "fwd_vol_vs_fcst": 0.8067928842244146
+    },
+    {
+      "tf": 1,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.3,
+      "fwd_vr_minus_1": -0.2733335660091343,
+      "t": -28.67082126466121,
+      "fwd_vol_vs_fcst": 0.7571023666503659
+    },
+    {
+      "tf": 1,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.3,
+      "fwd_vr_minus_1": -0.3122091664815982,
+      "t": -37.16754718778911,
+      "fwd_vol_vs_fcst": 0.7838339647268107
+    },
+    {
+      "tf": 1,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.4,
+      "fwd_vr_minus_1": -0.29782642019141414,
+      "t": -37.896976196187886,
+      "fwd_vol_vs_fcst": 0.777594416136005
+    },
+    {
+      "tf": 1,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.29736711376055636,
+      "fwd_vr_minus_1": -0.2242715298770429,
+      "t": -12.151780224287885,
+      "fwd_vol_vs_fcst": 0.7636432203298203
+    },
+    {
+      "tf": 1,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.19911536550880812,
+      "fwd_vr_minus_1": -0.2523078122252945,
+      "t": -12.359681249742986,
+      "fwd_vol_vs_fcst": 0.7671783461929587
+    },
+    {
+      "tf": 1,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.5035175207306355,
+      "fwd_vr_minus_1": -0.255143954552351,
+      "t": -22.672997690098875,
+      "fwd_vol_vs_fcst": 0.7676488919632919
+    },
+    {
+      "tf": 1,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.29989023051591657,
+      "fwd_vr_minus_1": -0.28158718263094895,
+      "t": -44.955496960283945,
+      "fwd_vol_vs_fcst": 0.7855217052830245
+    },
+    {
+      "tf": 1,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.29985492005250514,
+      "fwd_vr_minus_1": -0.30212974096141004,
+      "t": -53.87434742640037,
+      "fwd_vol_vs_fcst": 0.7649296193884982
+    },
+    {
+      "tf": 1,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.4002548494315783,
+      "fwd_vr_minus_1": -0.2991706921379603,
+      "t": -58.11210537009779,
+      "fwd_vol_vs_fcst": 0.770422524980531
+    },
+    {
+      "tf": 1,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.3352841147923115,
+      "fwd_vr_minus_1": -0.2380525933667472,
+      "t": -22.39796518228179,
+      "fwd_vol_vs_fcst": 0.799448562613134
+    },
+    {
+      "tf": 1,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.28215827887959033,
+      "fwd_vr_minus_1": -0.2432654842055511,
+      "t": -22.200821137112737,
+      "fwd_vol_vs_fcst": 0.7423410281696723
+    },
+    {
+      "tf": 1,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.38255760632809815,
+      "fwd_vr_minus_1": -0.2533780307375569,
+      "t": -27.53458140112968,
+      "fwd_vol_vs_fcst": 0.7551446614855845
+    },
+    {
+      "tf": 1,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "share": 0.2727272727272727,
+      "fwd_vr_minus_1": -0.26888987052648466,
+      "t": -26.819940084114894,
+      "fwd_vol_vs_fcst": 0.7811185853555724
+    },
+    {
+      "tf": 1,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "share": 0.7272727272727273,
+      "fwd_vr_minus_1": -0.30508387116565766,
+      "t": -54.37558785213736,
+      "fwd_vol_vs_fcst": 0.770201341974619
+    },
+    {
+      "tf": 1,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "share": 0.2727272727272727,
+      "fwd_vr_minus_1": -0.233774269310252,
+      "t": -14.314038262264651,
+      "fwd_vol_vs_fcst": 0.7775767160525943
+    },
+    {
+      "tf": 1,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "share": 0.7272727272727273,
+      "fwd_vr_minus_1": -0.25001671245138374,
+      "t": -24.5478130333993,
+      "fwd_vol_vs_fcst": 0.7619008157309256
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "share": 0.330000076761877,
+      "fwd_vr_minus_1": -0.28867175748612206,
+      "t": -30.93012417325055,
+      "fwd_vol_vs_fcst": 0.8607302899149043
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "share": 0.33999984647624604,
+      "fwd_vr_minus_1": -0.2939794517703289,
+      "t": -38.39773558665633,
+      "fwd_vol_vs_fcst": 0.7787711700083482
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "share": 0.27999969295249205,
+      "fwd_vr_minus_1": -0.30704196114195237,
+      "t": -37.90488539914925,
+      "fwd_vol_vs_fcst": 0.6940568041062468
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "share": 0.05000038380938491,
+      "fwd_vr_minus_1": -0.2718712777562184,
+      "t": -14.59476477021137,
+      "fwd_vol_vs_fcst": 0.5997640072975283
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "share": 0.356950972524743,
+      "fwd_vr_minus_1": -0.2586625122789883,
+      "t": -16.45369164327208,
+      "fwd_vol_vs_fcst": 0.8191572922825816
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "share": 0.2726011693224808,
+      "fwd_vr_minus_1": -0.21960001027877268,
+      "t": -13.98614049903998,
+      "fwd_vol_vs_fcst": 0.786805867679285
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "share": 0.3085387290305323,
+      "fwd_vr_minus_1": -0.2511800078521044,
+      "t": -18.60477530041942,
+      "fwd_vol_vs_fcst": 0.7227515034311347
+    },
+    {
+      "tf": 1,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "share": 0.061909129122243875,
+      "fwd_vr_minus_1": -0.2542112471432471,
+      "t": -9.790401158230555,
+      "fwd_vol_vs_fcst": 0.5915175905034239
+    },
+    {
+      "tf": 1,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "share": 0.8060749349443093,
+      "fwd_vr_minus_1": -0.2939470180049678,
+      "t": -57.90574528935532,
+      "fwd_vol_vs_fcst": 0.779497978678583
+    },
+    {
+      "tf": 1,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "share": 0.19392506505569074,
+      "fwd_vr_minus_1": -0.2982377327113812,
+      "t": -44.82064152377898,
+      "fwd_vol_vs_fcst": 0.7475752061231
+    },
+    {
+      "tf": 1,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "share": 0.7973289006075891,
+      "fwd_vr_minus_1": -0.24254186959679422,
+      "t": -25.76807202721814,
+      "fwd_vol_vs_fcst": 0.7709660705916236
+    },
+    {
+      "tf": 1,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "share": 0.20267109939241088,
+      "fwd_vr_minus_1": -0.2566321755727169,
+      "t": -23.527583410124247,
+      "fwd_vol_vs_fcst": 0.7482198543934041
+    },
+    {
+      "tf": 5,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "share": 0.17347800388415097,
+      "fwd_vr_minus_1": -0.23411690349533698,
+      "t": -27.630708297333953,
+      "fwd_vol_vs_fcst": 0.6499200232889425
+    },
+    {
+      "tf": 5,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "share": 0.6813576105562933,
+      "fwd_vr_minus_1": -0.21280467042993467,
+      "t": -45.24082614405376,
+      "fwd_vol_vs_fcst": 0.7611680161760206
+    },
+    {
+      "tf": 5,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "share": 0.14516438555955571,
+      "fwd_vr_minus_1": -0.20150706043644911,
+      "t": -27.758536275350945,
+      "fwd_vol_vs_fcst": 0.8769793865349367
+    },
+    {
+      "tf": 5,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "share": 0.23188696549352286,
+      "fwd_vr_minus_1": -0.1966195688119629,
+      "t": -15.38343565210673,
+      "fwd_vol_vs_fcst": 0.6605954077010381
+    },
+    {
+      "tf": 5,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "share": 0.6382169742825481,
+      "fwd_vr_minus_1": -0.1930374466595902,
+      "t": -22.882541943504496,
+      "fwd_vol_vs_fcst": 0.7751305940417437
+    },
+    {
+      "tf": 5,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "share": 0.12989606022392908,
+      "fwd_vr_minus_1": -0.172264568744291,
+      "t": -13.50056014695126,
+      "fwd_vol_vs_fcst": 0.9340040296244299
+    },
+    {
+      "tf": 5,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.3000007676187698,
+      "fwd_vr_minus_1": -0.24160365194750016,
+      "t": -30.7935477838239,
+      "fwd_vol_vs_fcst": 0.7471998757451925
+    },
+    {
+      "tf": 5,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.3000007676187698,
+      "fwd_vr_minus_1": -0.20857604897279297,
+      "t": -25.96323160053186,
+      "fwd_vol_vs_fcst": 0.7681846868901994
+    },
+    {
+      "tf": 5,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.39999846476246037,
+      "fwd_vr_minus_1": -0.19949329885171974,
+      "t": -27.660665596105947,
+      "fwd_vol_vs_fcst": 0.7600489304984148
+    },
+    {
+      "tf": 5,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.27393098704574115,
+      "fwd_vr_minus_1": -0.2137276525325093,
+      "t": -14.64042827441473,
+      "fwd_vol_vs_fcst": 0.746410757762283
+    },
+    {
+      "tf": 5,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.33431732202224007,
+      "fwd_vr_minus_1": -0.18041808637141907,
+      "t": -14.460755479280781,
+      "fwd_vol_vs_fcst": 0.7857034719106571
+    },
+    {
+      "tf": 5,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.3917516909320188,
+      "fwd_vr_minus_1": -0.1844509391408152,
+      "t": -13.826329217626654,
+      "fwd_vol_vs_fcst": 0.7724750252400572
+    },
+    {
+      "tf": 5,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.2999892533372226,
+      "fwd_vr_minus_1": -0.21130273509070852,
+      "t": -30.030520920212766,
+      "fwd_vol_vs_fcst": 0.7928879909011074
+    },
+    {
+      "tf": 5,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.2999892533372226,
+      "fwd_vr_minus_1": -0.22285685080011133,
+      "t": -31.342464713806134,
+      "fwd_vol_vs_fcst": 0.7368944319428927
+    },
+    {
+      "tf": 5,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.4000214933255548,
+      "fwd_vr_minus_1": -0.21155307511784194,
+      "t": -38.68653194627225,
+      "fwd_vol_vs_fcst": 0.7492261300832163
+    },
+    {
+      "tf": 5,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.29135618479880776,
+      "fwd_vr_minus_1": -0.20309638910080755,
+      "t": -16.830431477936038,
+      "fwd_vol_vs_fcst": 0.829958115304195
+    },
+    {
+      "tf": 5,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.30647904008559745,
+      "fwd_vr_minus_1": -0.18875160417153106,
+      "t": -15.581909763231286,
+      "fwd_vol_vs_fcst": 0.7345577604505221
+    },
+    {
+      "tf": 5,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.4021647751155948,
+      "fwd_vr_minus_1": -0.18428737660103273,
+      "t": -17.841915652569977,
+      "fwd_vol_vs_fcst": 0.7530710985406263
+    },
+    {
+      "tf": 5,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "share": 0.2727272727272727,
+      "fwd_vr_minus_1": -0.19094304782540714,
+      "t": -20.73672359456552,
+      "fwd_vol_vs_fcst": 0.7746450894915896
+    },
+    {
+      "tf": 5,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "share": 0.7272727272727273,
+      "fwd_vr_minus_1": -0.22439224893091164,
+      "t": -43.93911733295713,
+      "fwd_vol_vs_fcst": 0.7522512657377947
+    },
+    {
+      "tf": 5,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "share": 0.2727272727272727,
+      "fwd_vr_minus_1": -0.1738181984886254,
+      "t": -11.826067677998033,
+      "fwd_vol_vs_fcst": 0.8128928493297758
+    },
+    {
+      "tf": 5,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "share": 0.7272727272727273,
+      "fwd_vr_minus_1": -0.19801956905067836,
+      "t": -21.503998909105892,
+      "fwd_vol_vs_fcst": 0.7525879428830998
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "share": 0.32999930914310716,
+      "fwd_vr_minus_1": -0.20285043199784006,
+      "t": -23.88586678200143,
+      "fwd_vol_vs_fcst": 0.8387191264642962
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "share": 0.3400013817137857,
+      "fwd_vr_minus_1": -0.2136588053743801,
+      "t": -29.965098896288225,
+      "fwd_vol_vs_fcst": 0.7595954564489129
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "share": 0.2799966224774128,
+      "fwd_vr_minus_1": -0.22931480767123402,
+      "t": -26.786618668234933,
+      "fwd_vol_vs_fcst": 0.6900511447738717
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "share": 0.05000268666569435,
+      "fwd_vr_minus_1": -0.22169399026199554,
+      "t": -12.034667320788218,
+      "fwd_vol_vs_fcst": 0.606041138395818
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "share": 0.3457812679124155,
+      "fwd_vr_minus_1": -0.20946783800970883,
+      "t": -14.573448933233717,
+      "fwd_vol_vs_fcst": 0.8267326521203412
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "share": 0.2871431846841683,
+      "fwd_vr_minus_1": -0.16876727851063758,
+      "t": -11.500656054189058,
+      "fwd_vol_vs_fcst": 0.7857506929714296
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "share": 0.3098417975467156,
+      "fwd_vr_minus_1": -0.19470487528063643,
+      "t": -16.00459413447161,
+      "fwd_vol_vs_fcst": 0.7219771010938357
+    },
+    {
+      "tf": 5,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "share": 0.057233749856700676,
+      "fwd_vr_minus_1": -0.17249890814072946,
+      "t": -6.153815061113952,
+      "fwd_vol_vs_fcst": 0.6008018016240585
+    },
+    {
+      "tf": 5,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "share": 0.8096343831799375,
+      "fwd_vr_minus_1": -0.21665455934000974,
+      "t": -45.83390385956511,
+      "fwd_vol_vs_fcst": 0.7631933463091217
+    },
+    {
+      "tf": 5,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "share": 0.19036561682006248,
+      "fwd_vr_minus_1": -0.2072473215205756,
+      "t": -22.2095687040777,
+      "fwd_vol_vs_fcst": 0.7391409354176476
+    },
+    {
+      "tf": 5,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "share": 0.7956073980664145,
+      "fwd_vr_minus_1": -0.19074664701931468,
+      "t": -21.66532275730126,
+      "fwd_vol_vs_fcst": 0.773482333277137
+    },
+    {
+      "tf": 5,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "share": 0.20439260193358555,
+      "fwd_vr_minus_1": -0.192639194010418,
+      "t": -12.293224384598407,
+      "fwd_vol_vs_fcst": 0.7550427606346468
+    },
+    {
+      "tf": 15,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "share": 0.31301454445664106,
+      "fwd_vr_minus_1": -0.15437503599234062,
+      "t": -19.880705732471853,
+      "fwd_vol_vs_fcst": 0.6378065326697121
+    },
+    {
+      "tf": 15,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "share": 0.5746318148554702,
+      "fwd_vr_minus_1": -0.1237121037908127,
+      "t": -22.46712964421481,
+      "fwd_vol_vs_fcst": 0.761280676565422
+    },
+    {
+      "tf": 15,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "share": 0.11235364068788876,
+      "fwd_vr_minus_1": -0.10070697325736098,
+      "t": -9.397753187291041,
+      "fwd_vol_vs_fcst": 0.9077128641349937
+    },
+    {
+      "tf": 15,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "share": 0.3763945810564663,
+      "fwd_vr_minus_1": -0.1565384067496614,
+      "t": -13.447116444957588,
+      "fwd_vol_vs_fcst": 0.6212869377235414
+    },
+    {
+      "tf": 15,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "share": 0.51775956284153,
+      "fwd_vr_minus_1": -0.1280900260395418,
+      "t": -13.57479147554233,
+      "fwd_vol_vs_fcst": 0.7962800741503422
+    },
+    {
+      "tf": 15,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "share": 0.10584585610200364,
+      "fwd_vr_minus_1": -0.09858346430454501,
+      "t": -5.406168243803981,
+      "fwd_vol_vs_fcst": 1.0036872485373913
+    },
+    {
+      "tf": 15,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.30000228686425173,
+      "fwd_vr_minus_1": -0.16038518270815574,
+      "t": -19.690706152997727,
+      "fwd_vol_vs_fcst": 0.7220972595506581
+    },
+    {
+      "tf": 15,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.30000228686425173,
+      "fwd_vr_minus_1": -0.11021719926494464,
+      "t": -13.019532243349115,
+      "fwd_vol_vs_fcst": 0.7611177089931993
+    },
+    {
+      "tf": 15,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.39999542627149653,
+      "fwd_vr_minus_1": -0.12394578938101987,
+      "t": -15.86069508901736,
+      "fwd_vol_vs_fcst": 0.7349763292386832
+    },
+    {
+      "tf": 15,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.2623520036429873,
+      "fwd_vr_minus_1": -0.17159228507781485,
+      "t": -12.514308002341876,
+      "fwd_vol_vs_fcst": 0.7312683171666935
+    },
+    {
+      "tf": 15,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.3356386612021858,
+      "fwd_vr_minus_1": -0.10336995915309245,
+      "t": -8.214391712287338,
+      "fwd_vol_vs_fcst": 0.7875095280904965
+    },
+    {
+      "tf": 15,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.40200933515482695,
+      "fwd_vr_minus_1": -0.138772346996811,
+      "t": -11.493596369606655,
+      "fwd_vol_vs_fcst": 0.7397894527731336
+    },
+    {
+      "tf": 15,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.30000228686425173,
+      "fwd_vr_minus_1": -0.12638291923253542,
+      "t": -15.484624776419345,
+      "fwd_vol_vs_fcst": 0.7875990048808621
+    },
+    {
+      "tf": 15,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.30000228686425173,
+      "fwd_vr_minus_1": -0.14656940978549998,
+      "t": -17.623912373537006,
+      "fwd_vol_vs_fcst": 0.7026760901312497
+    },
+    {
+      "tf": 15,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.39999542627149653,
+      "fwd_vr_minus_1": -0.12214722739429539,
+      "t": -18.169051511347778,
+      "fwd_vol_vs_fcst": 0.7296819120173598
+    },
+    {
+      "tf": 15,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.27681010928961747,
+      "fwd_vr_minus_1": -0.10868939883314954,
+      "t": -8.146286402164712,
+      "fwd_vol_vs_fcst": 0.8415838713274241
+    },
+    {
+      "tf": 15,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.30660860655737704,
+      "fwd_vr_minus_1": -0.14140737409678614,
+      "t": -11.12679668769879,
+      "fwd_vol_vs_fcst": 0.7001464804711608
+    },
+    {
+      "tf": 15,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.41658128415300544,
+      "fwd_vr_minus_1": -0.14897153441680452,
+      "t": -15.100136692839643,
+      "fwd_vol_vs_fcst": 0.7343019256347519
+    },
+    {
+      "tf": 15,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "share": 0.2708333333333333,
+      "fwd_vr_minus_1": -0.10339337905943298,
+      "t": -10.841779095763847,
+      "fwd_vol_vs_fcst": 0.7659733329531143
+    },
+    {
+      "tf": 15,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "share": 0.7291666666666666,
+      "fwd_vr_minus_1": -0.14169884436926106,
+      "t": -25.744987039370077,
+      "fwd_vol_vs_fcst": 0.7281639714858319
+    },
+    {
+      "tf": 15,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "share": 0.2708333333333333,
+      "fwd_vr_minus_1": -0.11341935020276504,
+      "t": -7.8507318388425285,
+      "fwd_vol_vs_fcst": 0.8324578700600905
+    },
+    {
+      "tf": 15,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "share": 0.7291666666666666,
+      "fwd_vr_minus_1": -0.14430168493737797,
+      "t": -16.206383320288623,
+      "fwd_vol_vs_fcst": 0.7220534423335326
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "share": 0.3300059458470545,
+      "fwd_vr_minus_1": -0.10376900525180183,
+      "t": -11.85976403333607,
+      "fwd_vol_vs_fcst": 0.8032510712477204
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "share": 0.33998810830589093,
+      "fwd_vr_minus_1": -0.1352012844529847,
+      "t": -17.932587619166576,
+      "fwd_vol_vs_fcst": 0.742120684727024
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "share": 0.28000365898280277,
+      "fwd_vr_minus_1": -0.16028608268709924,
+      "t": -19.580867806999677,
+      "fwd_vol_vs_fcst": 0.6768531390740149
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "share": 0.05000228686425174,
+      "fwd_vr_minus_1": -0.11380762286514795,
+      "t": -5.03753640002834,
+      "fwd_vol_vs_fcst": 0.6394937386318742
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "share": 0.34144467213114754,
+      "fwd_vr_minus_1": -0.1496099480684932,
+      "t": -11.772325009412206,
+      "fwd_vol_vs_fcst": 0.7994991443247662
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "share": 0.30296561930783245,
+      "fwd_vr_minus_1": -0.12420545275565474,
+      "t": -8.818119594460027,
+      "fwd_vol_vs_fcst": 0.7674032425010127
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "share": 0.30111566484517305,
+      "fwd_vr_minus_1": -0.12784271801698366,
+      "t": -9.921460496909964,
+      "fwd_vol_vs_fcst": 0.7165644784680153
+    },
+    {
+      "tf": 15,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "share": 0.05447404371584699,
+      "fwd_vr_minus_1": -0.15114318579780117,
+      "t": -5.281244331373263,
+      "fwd_vol_vs_fcst": 0.588762120684529
+    },
+    {
+      "tf": 15,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "share": 0.8238085437248445,
+      "fwd_vr_minus_1": -0.13095690400568855,
+      "t": -25.46920338150145,
+      "fwd_vol_vs_fcst": 0.7444659463613518
+    },
+    {
+      "tf": 15,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "share": 0.1761914562751555,
+      "fwd_vr_minus_1": -0.12979766333158013,
+      "t": -11.606869959921994,
+      "fwd_vol_vs_fcst": 0.7131457015522403
+    },
+    {
+      "tf": 15,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "share": 0.79900956284153,
+      "fwd_vr_minus_1": -0.1292586681775545,
+      "t": -15.559686553857949,
+      "fwd_vol_vs_fcst": 0.7656261411306398
+    },
+    {
+      "tf": 15,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "share": 0.20099043715846995,
+      "fwd_vr_minus_1": -0.1598339297752313,
+      "t": -9.937616167753157,
+      "fwd_vol_vs_fcst": 0.7065109320572265
+    },
+    {
+      "tf": 60,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "share": 0.2783113794365166,
+      "fwd_vr_minus_1": -0.20331384652244472,
+      "t": -11.367672550191331,
+      "fwd_vol_vs_fcst": 0.6114738366753897
+    },
+    {
+      "tf": 60,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "share": 0.5878613245517746,
+      "fwd_vr_minus_1": -0.14609150916497202,
+      "t": -11.404081630839247,
+      "fwd_vol_vs_fcst": 0.7627761153753803
+    },
+    {
+      "tf": 60,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "share": 0.13382729601170876,
+      "fwd_vr_minus_1": -0.10105911688389226,
+      "t": -4.916312103286517,
+      "fwd_vol_vs_fcst": 0.8403603645143867
+    },
+    {
+      "tf": 60,
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "share": 0.39025500910746813,
+      "fwd_vr_minus_1": -0.1789458199601558,
+      "t": -7.114128849864804,
+      "fwd_vol_vs_fcst": 0.5671378220206654
+    },
+    {
+      "tf": 60,
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "share": 0.4791666666666667,
+      "fwd_vr_minus_1": -0.13424353644760134,
+      "t": -6.7798579211466485,
+      "fwd_vol_vs_fcst": 0.8173999069320903
+    },
+    {
+      "tf": 60,
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "share": 0.1305783242258652,
+      "fwd_vr_minus_1": -0.11456611723675164,
+      "t": -3.2031866137509923,
+      "fwd_vol_vs_fcst": 0.9561977988942431
+    },
+    {
+      "tf": 60,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.29999085254299307,
+      "fwd_vr_minus_1": -0.20397579071529645,
+      "t": -10.836066527916875,
+      "fwd_vol_vs_fcst": 0.7509393206925358
+    },
+    {
+      "tf": 60,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.29999085254299307,
+      "fwd_vr_minus_1": -0.11426007810669798,
+      "t": -6.253400024510394,
+      "fwd_vol_vs_fcst": 0.7216366108873153
+    },
+    {
+      "tf": 60,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.4000182949140139,
+      "fwd_vr_minus_1": -0.15171813450477134,
+      "t": -9.086521788002264,
+      "fwd_vol_vs_fcst": 0.7221772868582345
+    },
+    {
+      "tf": 60,
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.25922131147540983,
+      "fwd_vr_minus_1": -0.22254012902984835,
+      "t": -6.781296068592016,
+      "fwd_vol_vs_fcst": 0.6946432916267298
+    },
+    {
+      "tf": 60,
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.33401639344262296,
+      "fwd_vr_minus_1": -0.09757970843599753,
+      "t": -3.784337385582865,
+      "fwd_vol_vs_fcst": 0.729058283049861
+    },
+    {
+      "tf": 60,
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.4067622950819672,
+      "fwd_vr_minus_1": -0.1445763772871895,
+      "t": -5.892658853985735,
+      "fwd_vol_vs_fcst": 0.7750934641448339
+    },
+    {
+      "tf": 60,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "share": 0.29999085254299307,
+      "fwd_vr_minus_1": -0.18338269054556128,
+      "t": -10.243751088469994,
+      "fwd_vol_vs_fcst": 0.7553039237446628
+    },
+    {
+      "tf": 60,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "share": 0.29999085254299307,
+      "fwd_vr_minus_1": -0.1669653111085874,
+      "t": -9.763442543614405,
+      "fwd_vol_vs_fcst": 0.7004714982010324
+    },
+    {
+      "tf": 60,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "share": 0.4000182949140139,
+      "fwd_vr_minus_1": -0.12739864831443515,
+      "t": -8.43816510524356,
+      "fwd_vol_vs_fcst": 0.7348230618583469
+    },
+    {
+      "tf": 60,
+      "classifier": "efficiency-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "share": 0.27709471766848814,
+      "fwd_vr_minus_1": -0.17915276017567147,
+      "t": -5.903403611002442,
+      "fwd_vol_vs_fcst": 0.8045319994114621
+    },
+    {
+      "tf": 60,
+      "classifier": "efficiency-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "share": 0.32354280510018213,
+      "fwd_vr_minus_1": -0.15305738900508892,
+      "t": -5.977604797185378,
+      "fwd_vol_vs_fcst": 0.687523652705922
+    },
+    {
+      "tf": 60,
+      "classifier": "efficiency-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "share": 0.39936247723132967,
+      "fwd_vr_minus_1": -0.12486480249099494,
+      "t": -5.2988166870512226,
+      "fwd_vol_vs_fcst": 0.7369003623977094
+    },
+    {
+      "tf": 60,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "share": 0.25,
+      "fwd_vr_minus_1": -0.14194603020850183,
+      "t": -7.088547425874533,
+      "fwd_vol_vs_fcst": 0.7296299112133373
+    },
+    {
+      "tf": 60,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "share": 0.75,
+      "fwd_vr_minus_1": -0.16120604622703658,
+      "t": -13.8024522475299,
+      "fwd_vol_vs_fcst": 0.7310697027771383
+    },
+    {
+      "tf": 60,
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "share": 0.25,
+      "fwd_vr_minus_1": -0.16636509839229408,
+      "t": -5.37891543467943,
+      "fwd_vol_vs_fcst": 0.7446614090575616
+    },
+    {
+      "tf": 60,
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "share": 0.75,
+      "fwd_vr_minus_1": -0.14274754948082355,
+      "t": -7.533523770856924,
+      "fwd_vol_vs_fcst": 0.736612708023667
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "share": 0.32999451152579584,
+      "fwd_vr_minus_1": -0.1064030073972444,
+      "t": -5.753987086425545,
+      "fwd_vol_vs_fcst": 0.7812480993077452
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "share": 0.3400109769484083,
+      "fwd_vr_minus_1": -0.19077300103845757,
+      "t": -10.657085071632414,
+      "fwd_vol_vs_fcst": 0.7334814092755763
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "share": 0.279957921697768,
+      "fwd_vr_minus_1": -0.17500628243580568,
+      "t": -8.993381848766797,
+      "fwd_vol_vs_fcst": 0.6758098750255613
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "share": 0.050036589828027805,
+      "fwd_vr_minus_1": -0.14078826608970774,
+      "t": -3.041161512641364,
+      "fwd_vol_vs_fcst": 0.6835041149286848
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "share": 0.3540528233151184,
+      "fwd_vr_minus_1": -0.15233310026519783,
+      "t": -5.778289370993358,
+      "fwd_vol_vs_fcst": 0.792708073442504
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "share": 0.28221766848816027,
+      "fwd_vr_minus_1": -0.12872077295521872,
+      "t": -3.8739853806475337,
+      "fwd_vol_vs_fcst": 0.7237198604518642
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "share": 0.2945127504553734,
+      "fwd_vr_minus_1": -0.1444452438348914,
+      "t": -4.873770851380642,
+      "fwd_vol_vs_fcst": 0.7222417084028641
+    },
+    {
+      "tf": 60,
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "share": 0.0692167577413479,
+      "fwd_vr_minus_1": -0.23580596294942846,
+      "t": -4.761562956876713,
+      "fwd_vol_vs_fcst": 0.5869577059079633
+    },
+    {
+      "tf": 60,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "share": 0.8431668496158068,
+      "fwd_vr_minus_1": -0.15164735040487531,
+      "t": -13.319548728704838,
+      "fwd_vol_vs_fcst": 0.7417773091223534
+    },
+    {
+      "tf": 60,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "share": 0.15683315038419318,
+      "fwd_vr_minus_1": -0.18026373222422865,
+      "t": -7.00502593708893,
+      "fwd_vol_vs_fcst": 0.6711233294454604
+    },
+    {
+      "tf": 60,
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "share": 0.7941712204007286,
+      "fwd_vr_minus_1": -0.15099294772506303,
+      "t": -8.115012316201103,
+      "fwd_vol_vs_fcst": 0.7390553989548274
+    },
+    {
+      "tf": 60,
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "share": 0.2058287795992714,
+      "fwd_vr_minus_1": -0.1409940915760189,
+      "t": -4.181957269015014,
+      "fwd_vol_vs_fcst": 0.7374567092641311
+    }
+  ],
+  "hmm": {
+    "1": {
+      "transmat": [
+        [
+          0.3078,
+          0.4867,
+          0.2055
+        ],
+        [
+          0.1511,
+          0.6388,
+          0.2101
+        ],
+        [
+          0.0829,
+          0.3541,
+          0.563
+        ]
+      ],
+      "expected_duration_bars": [
+        1.4,
+        2.8,
+        2.3
+      ],
+      "means": [
+        [
+          0.024,
+          -2.996
+        ],
+        [
+          -0.005,
+          -0.859
+        ],
+        [
+          0.001,
+          0.272
+        ]
+      ]
+    },
+    "5": {
+      "transmat": [
+        [
+          0.6164,
+          0.3349,
+          0.0487
+        ],
+        [
+          0.1459,
+          0.7375,
+          0.1165
+        ],
+        [
+          0.0114,
+          0.5074,
+          0.4812
+        ]
+      ],
+      "expected_duration_bars": [
+        2.6,
+        3.8,
+        1.9
+      ],
+      "means": [
+        [
+          0.014,
+          -0.62
+        ],
+        [
+          0.003,
+          0.102
+        ],
+        [
+          -0.029,
+          0.882
+        ]
+      ]
+    },
+    "15": {
+      "transmat": [
+        [
+          0.6738,
+          0.2806,
+          0.0456
+        ],
+        [
+          0.1954,
+          0.6929,
+          0.1117
+        ],
+        [
+          0.0084,
+          0.578,
+          0.4136
+        ]
+      ],
+      "expected_duration_bars": [
+        3.1,
+        3.3,
+        1.7
+      ],
+      "means": [
+        [
+          0.011,
+          -0.289
+        ],
+        [
+          0.01,
+          0.304
+        ],
+        [
+          -0.065,
+          1.057
+        ]
+      ]
+    },
+    "60": {
+      "transmat": [
+        [
+          0.6864,
+          0.2412,
+          0.0724
+        ],
+        [
+          0.1645,
+          0.6978,
+          0.1377
+        ],
+        [
+          0.0098,
+          0.6358,
+          0.3544
+        ]
+      ],
+      "expected_duration_bars": [
+        3.2,
+        3.3,
+        1.5
+      ],
+      "means": [
+        [
+          0.008,
+          -0.275
+        ],
+        [
+          0.025,
+          0.304
+        ],
+        [
+          -0.095,
+          1.065
+        ]
+      ]
+    }
+  },
+  "regime_strategy": [
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 3825,
+      "exp_r": -0.41476954411704153
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 5444,
+      "exp_r": -0.41601566401512596
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 4183,
+      "exp_r": -0.4879763252339495
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 1132,
+      "exp_r": -0.5954900252217663
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 2853,
+      "exp_r": -0.6068980427958524
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 1816,
+      "exp_r": -0.6329391417101996
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 9571,
+      "exp_r": -0.45930045451084506
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 3881,
+      "exp_r": -0.38560244768779756
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 4101,
+      "exp_r": -0.6603700213414377
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 1700,
+      "exp_r": -0.4981263814541722
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 2785,
+      "exp_r": -0.6015077883012414
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 4321,
+      "exp_r": -0.4687575115450358
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 5226,
+      "exp_r": -0.3630679043790987
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 1120,
+      "exp_r": -0.2628522174191187
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 1528,
+      "exp_r": -0.8115558644671304
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 1538,
+      "exp_r": -0.6436722482832374
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 2177,
+      "exp_r": -0.5213492647985462
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 558,
+      "exp_r": -0.3404832934793899
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 354,
+      "exp_r": -0.6631165275734262
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 1599,
+      "exp_r": -0.4926146537102872
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 11499,
+      "exp_r": -0.42351975541837533
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 273,
+      "exp_r": -0.8320854372341264
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 982,
+      "exp_r": -0.7046039987636533
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 4546,
+      "exp_r": -0.57983102834195
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 10056,
+      "exp_r": -0.4519753249984045
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 3396,
+      "exp_r": -0.39676792738977745
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 4353,
+      "exp_r": -0.6246855572924079
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 1448,
+      "exp_r": -0.5771657977206334
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 22649,
+      "exp_r": -0.5182380010428709
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 28875,
+      "exp_r": -0.49121726203965477
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 20781,
+      "exp_r": -0.5371279915796252
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 5764,
+      "exp_r": -0.6665299861705797
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 13888,
+      "exp_r": -0.6406628761720786
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 7902,
+      "exp_r": -0.6484518225283363
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 52289,
+      "exp_r": -0.5264015612549129
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 20016,
+      "exp_r": -0.47754378914733553
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 20014,
+      "exp_r": -0.6713166369693421
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 7540,
+      "exp_r": -0.5872334209389328
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 24266,
+      "exp_r": -0.6187163678510346
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 25284,
+      "exp_r": -0.5070926849731426
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 19551,
+      "exp_r": -0.41981863308372847
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 3204,
+      "exp_r": -0.32476616587924056
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 9876,
+      "exp_r": -0.776903194979909
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 7673,
+      "exp_r": -0.659206092845389
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 8435,
+      "exp_r": -0.535223976541006
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 1570,
+      "exp_r": -0.39367682804861703
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 1862,
+      "exp_r": -0.7093645625771856
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 9109,
+      "exp_r": -0.5748581525106784
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 61334,
+      "exp_r": -0.4977061335196256
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 1100,
+      "exp_r": -0.8274342803882734
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 4819,
+      "exp_r": -0.6691080147419086
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 21635,
+      "exp_r": -0.6345672260095033
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 58282,
+      "exp_r": -0.5076395204807308
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 14023,
+      "exp_r": -0.5346417448030558
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 21883,
+      "exp_r": -0.6474471704302023
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 5671,
+      "exp_r": -0.6516284139763444
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 901,
+      "exp_r": -0.2037822194147843
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 1123,
+      "exp_r": -0.2165830915379615
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 790,
+      "exp_r": -0.3236356500341825
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 404,
+      "exp_r": -0.3413045069397371
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 444,
+      "exp_r": -0.3903445453290248
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 283,
+      "exp_r": -0.456430368739606
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 1893,
+      "exp_r": -0.24116058665476836
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 921,
+      "exp_r": -0.24536999400584047
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 702,
+      "exp_r": -0.4456009963651269
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 429,
+      "exp_r": -0.29733774786650397
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 453,
+      "exp_r": -0.2983354137554709
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 908,
+      "exp_r": -0.24618839174345863
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 1193,
+      "exp_r": -0.2230630907195033
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 260,
+      "exp_r": -0.2219364832853822
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 243,
+      "exp_r": -0.5238987138269136
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 319,
+      "exp_r": -0.4253903445270296
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 462,
+      "exp_r": -0.3406672486219871
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 107,
+      "exp_r": -0.18667866407129724
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 39,
+      "exp_r": -0.22859696553566905
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 898,
+      "exp_r": -0.3300476434724155
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 1877,
+      "exp_r": -0.2009614755049203
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 11,
+      "exp_r": -0.4311238130814545
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 346,
+      "exp_r": -0.38368983457011835
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 774,
+      "exp_r": -0.3913058767156231
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 2117,
+      "exp_r": -0.20853713256717502
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 697,
+      "exp_r": -0.3458101081379427
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 825,
+      "exp_r": -0.4061033822150012
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 306,
+      "exp_r": -0.34423040181592585
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 4895,
+      "exp_r": -0.2992567674408616
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 5837,
+      "exp_r": -0.24528070941076827
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 4012,
+      "exp_r": -0.2507630849722009
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 2021,
+      "exp_r": -0.42505219142640116
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 2257,
+      "exp_r": -0.38307686751252745
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 1472,
+      "exp_r": -0.37868558949126024
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 10665,
+      "exp_r": -0.267882234514061
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 4079,
+      "exp_r": -0.2563527441210298
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 4095,
+      "exp_r": -0.4059174264669992
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 1655,
+      "exp_r": -0.3739143777627218
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 5000,
+      "exp_r": -0.3778806518085341
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 5097,
+      "exp_r": -0.22582545364576972
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 4012,
+      "exp_r": -0.19844584474699492
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 635,
+      "exp_r": -0.10397881726305352
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 2047,
+      "exp_r": -0.5117753054042042
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 1712,
+      "exp_r": -0.37037478916848193
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 1710,
+      "exp_r": -0.3084957306850235
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 281,
+      "exp_r": -0.25568244800508494
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 150,
+      "exp_r": -0.47513187539336355
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 5654,
+      "exp_r": -0.2714143363461264
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 8940,
+      "exp_r": -0.25691056323849426
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 133,
+      "exp_r": -0.49057157616633695
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 2562,
+      "exp_r": -0.40656655845883244
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 3055,
+      "exp_r": -0.38435044653944817
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 12095,
+      "exp_r": -0.2650753725129507
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 2649,
+      "exp_r": -0.2629445994027946
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 4607,
+      "exp_r": -0.39062121332427796
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 1143,
+      "exp_r": -0.42123204443982293
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 302,
+      "exp_r": -0.11684179548646208
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 427,
+      "exp_r": -0.10064342088150004
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 285,
+      "exp_r": 0.08136777049105891
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 142,
+      "exp_r": 0.06501269283966822
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 177,
+      "exp_r": -0.07270602964305685
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 100,
+      "exp_r": -0.16646004331565478
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 702,
+      "exp_r": -0.06534717957539178
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 312,
+      "exp_r": -0.029478936863574574
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 245,
+      "exp_r": -0.15160844312618843
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 174,
+      "exp_r": 0.09690172052162364
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 188,
+      "exp_r": -0.07950107174161931
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 297,
+      "exp_r": -0.05690642334413781
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 421,
+      "exp_r": -0.0795649582661093
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 108,
+      "exp_r": 0.0951213730306027
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 80,
+      "exp_r": -0.06420967137859104
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 98,
+      "exp_r": -0.12027495151359133
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 194,
+      "exp_r": -0.048336521692113305
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 47,
+      "exp_r": 0.12803904195182053
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 55,
+      "exp_r": -0.1853202437916782
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 349,
+      "exp_r": -0.1562684469843349
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 610,
+      "exp_r": 0.015834677119204745
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 23,
+      "exp_r": 0.16547983977554354
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 141,
+      "exp_r": -0.01180329264493034
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 255,
+      "exp_r": -0.08794094606688618
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 819,
+      "exp_r": -0.036881820119860555
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 195,
+      "exp_r": -0.12751250094971542
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 314,
+      "exp_r": -0.04904375309567119
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 105,
+      "exp_r": -0.046508864029646685
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 1776,
+      "exp_r": -0.16720581486358946
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 1898,
+      "exp_r": -0.09595510131244135
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 1237,
+      "exp_r": -0.1224093988961948
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 787,
+      "exp_r": -0.25375942029096415
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 773,
+      "exp_r": -0.2393534128626608
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 459,
+      "exp_r": -0.16080414485349415
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 3492,
+      "exp_r": -0.11769859452578015
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 1419,
+      "exp_r": -0.15468445654638288
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 1392,
+      "exp_r": -0.2131821937793622
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 627,
+      "exp_r": -0.25803563103462085
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 1679,
+      "exp_r": -0.22519479606744583
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 1656,
+      "exp_r": -0.09115896095186196
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 1366,
+      "exp_r": -0.06890945651019441
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 210,
+      "exp_r": -0.034805316175671584
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 742,
+      "exp_r": -0.3111835154742466
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 635,
+      "exp_r": -0.24492223743833091
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 556,
+      "exp_r": -0.0942544580446548
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 86,
+      "exp_r": -0.22917077292465352
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 107,
+      "exp_r": -0.17344597854924754
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 2098,
+      "exp_r": -0.16248212051757818
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 2706,
+      "exp_r": -0.10016797020424724
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 123,
+      "exp_r": -0.26323733196102433
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 903,
+      "exp_r": -0.2577808035566232
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 993,
+      "exp_r": -0.1947469254347862
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 4089,
+      "exp_r": -0.12252647112332082
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 822,
+      "exp_r": -0.1575304081509523
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 1641,
+      "exp_r": -0.2086526741956969
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 378,
+      "exp_r": -0.3072458096413777
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 91,
+      "exp_r": 0.0042227020204107365
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 91,
+      "exp_r": 0.0287042584017871
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 107,
+      "exp_r": 0.07714120460523238
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 37,
+      "exp_r": 0.2068202008552314
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 51,
+      "exp_r": -0.09492651849469133
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 24,
+      "exp_r": -0.2544549843852133
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 208,
+      "exp_r": -0.07202476653549315
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 81,
+      "exp_r": 0.3238470830933634
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 68,
+      "exp_r": -0.034521201585051974
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 44,
+      "exp_r": -0.021554157478347383
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 41,
+      "exp_r": -0.04558714466518795
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 69,
+      "exp_r": 0.1520387063029984
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 147,
+      "exp_r": 0.013918781753491998
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 32,
+      "exp_r": 0.018212611555698754
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 10,
+      "exp_r": -0.44922567739932173
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 20,
+      "exp_r": -0.2527359776376215
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 66,
+      "exp_r": 0.06527453183179
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 16,
+      "exp_r": 0.12143953681354312
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 30,
+      "exp_r": -0.09672582353528421
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 100,
+      "exp_r": 0.17043118819089062
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 159,
+      "exp_r": -0.01818164667830608
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 7,
+      "exp_r": -0.5473090041680634
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 35,
+      "exp_r": 0.16084457040571817
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 70,
+      "exp_r": -0.07277459388363583
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 225,
+      "exp_r": 0.05079401976745726
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 64,
+      "exp_r": -0.0027842524452815244
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 78,
+      "exp_r": -0.13251245612578474
+    },
+    {
+      "tf": 60,
+      "family": "A",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 34,
+      "exp_r": 0.2070631453229527
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "train",
+      "n": 536,
+      "exp_r": -0.11786240139456582
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "train",
+      "n": 450,
+      "exp_r": -0.0312537115176511
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "train",
+      "n": 258,
+      "exp_r": -0.028625253445227643
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "RANGE",
+      "split": "validation",
+      "n": 249,
+      "exp_r": -0.32378643155907166
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "NEUTRAL",
+      "split": "validation",
+      "n": 198,
+      "exp_r": -0.14176073044149015
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "variance-ratio rule",
+      "label": "TREND",
+      "split": "validation",
+      "n": 90,
+      "exp_r": 0.08022529806044042
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "train",
+      "n": 808,
+      "exp_r": -0.06993608727624638
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "train",
+      "n": 436,
+      "exp_r": -0.06448480321122005
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "session",
+      "label": "ETH",
+      "split": "validation",
+      "n": 301,
+      "exp_r": -0.2133390616129872
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "session",
+      "label": "RTH",
+      "split": "validation",
+      "n": 236,
+      "exp_r": -0.15786488014692834
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "train",
+      "n": 399,
+      "exp_r": -0.1706690226571573
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "train",
+      "n": 422,
+      "exp_r": 0.04387538086881644
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "train",
+      "n": 374,
+      "exp_r": -0.08304796984220011
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "train",
+      "n": 49,
+      "exp_r": -0.08127066703573331
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "low",
+      "split": "validation",
+      "n": 220,
+      "exp_r": -0.10355745216092159
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "normal",
+      "split": "validation",
+      "n": 142,
+      "exp_r": -0.18830502034404975
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "high",
+      "split": "validation",
+      "n": 151,
+      "exp_r": -0.3119313881303058
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "vol tercile",
+      "label": "extreme",
+      "split": "validation",
+      "n": 24,
+      "exp_r": -0.20198238701042795
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "train",
+      "n": 20,
+      "exp_r": 0.028808473408213332
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "train",
+      "n": 406,
+      "exp_r": -0.04240651802662204
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "train",
+      "n": 818,
+      "exp_r": -0.08310862575630162
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "calm",
+      "split": "validation",
+      "n": 36,
+      "exp_r": -0.12083505949844693
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "mid",
+      "split": "validation",
+      "n": 191,
+      "exp_r": -0.05231741720664533
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "HMM-3 (filtered)",
+      "label": "turbulent",
+      "split": "validation",
+      "n": 310,
+      "exp_r": -0.28105961429603527
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "train",
+      "n": 1077,
+      "exp_r": -0.09156690256611692
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "train",
+      "n": 167,
+      "exp_r": 0.08379533739167024
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "stable",
+      "split": "validation",
+      "n": 434,
+      "exp_r": -0.1791255632325357
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "classifier": "CUSUM transition",
+      "label": "transition",
+      "split": "validation",
+      "n": 103,
+      "exp_r": -0.23039490113848304
+    }
+  ],
+  "probability": [
+    {
+      "tf": 1,
+      "family": "A",
+      "model": "base rate",
+      "n": 5801,
+      "observed_rate": 0.2863299431132563,
+      "mean_pred": 0.31289027653880463,
+      "brier": 0.205050558101692,
+      "brier_base": 0.205050558101692,
+      "brier_skill": 0.0,
+      "log_loss": 0.6005002782033603,
+      "auc": 0.5,
+      "ece": 0.02656033342554831
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "model": "logistic",
+      "n": 5801,
+      "observed_rate": 0.2863299431132563,
+      "mean_pred": 0.30164974036267717,
+      "brier": 0.20405756122230415,
+      "brier_base": 0.205050558101692,
+      "brier_skill": 0.004842692887943256,
+      "log_loss": 0.5980103458610285,
+      "auc": 0.5209333472938424,
+      "ece": 0.015319797249420812
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "model": "gbm",
+      "n": 5801,
+      "observed_rate": 0.2863299431132563,
+      "mean_pred": 0.2981014136787801,
+      "brier": 0.20480956924434834,
+      "brier_base": 0.205050558101692,
+      "brier_skill": 0.0011752655519432498,
+      "log_loss": 0.6003140420623173,
+      "auc": 0.5113504756752669,
+      "ece": 0.012745376131569293
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "model": "bayes beta-binomial",
+      "n": 5801,
+      "observed_rate": 0.2863299431132563,
+      "mean_pred": 0.29836081591721697,
+      "brier": 0.20415176822465428,
+      "brier_base": 0.205050558101692,
+      "brier_skill": 0.004383259842638321,
+      "log_loss": 0.5983729329814286,
+      "auc": 0.5203750723474305,
+      "ece": 0.01203087280396064
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "model": "base rate",
+      "n": 27554,
+      "observed_rate": 0.2515424257821006,
+      "mean_pred": 0.25003803333102825,
+      "brier": 0.18827109701040382,
+      "brier_base": 0.18827109701040382,
+      "brier_skill": 0.0,
+      "log_loss": 0.5640293635379289,
+      "auc": 0.5,
+      "ece": 0.001504392451072312
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "model": "logistic",
+      "n": 27554,
+      "observed_rate": 0.2515424257821006,
+      "mean_pred": 0.22715600650729548,
+      "brier": 0.18888933321651508,
+      "brier_base": 0.18827109701040382,
+      "brier_skill": -0.003283755265297561,
+      "log_loss": 0.5657467202038675,
+      "auc": 0.4984687243413689,
+      "ece": 0.024390798673076745
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "model": "gbm",
+      "n": 27554,
+      "observed_rate": 0.2515424257821006,
+      "mean_pred": 0.22687092638042947,
+      "brier": 0.18894774865175995,
+      "brier_base": 0.18827109701040382,
+      "brier_skill": -0.003594028250224479,
+      "log_loss": 0.5659750789911839,
+      "auc": 0.4963555740767154,
+      "ece": 0.024689387584703036
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "n": 27554,
+      "observed_rate": 0.2515424257821006,
+      "mean_pred": 0.22660065404238738,
+      "brier": 0.1889402050484265,
+      "brier_base": 0.18827109701040382,
+      "brier_skill": -0.0035539604785206347,
+      "log_loss": 0.5659069272135623,
+      "auc": 0.49881283504339746,
+      "ece": 0.02494177173971324
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "model": "base rate",
+      "n": 1131,
+      "observed_rate": 0.28205128205128205,
+      "mean_pred": 0.2935323383084577,
+      "brier": 0.2026301709972906,
+      "brier_base": 0.2026301709972906,
+      "brier_skill": 0.0,
+      "log_loss": 0.5952005620129677,
+      "auc": 0.5,
+      "ece": 0.01148105625717566
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "model": "logistic",
+      "n": 1131,
+      "observed_rate": 0.28205128205128205,
+      "mean_pred": 0.2721131490458934,
+      "brier": 0.20183119144324335,
+      "brier_base": 0.2026301709972906,
+      "brier_skill": 0.003943043378559552,
+      "log_loss": 0.5922816158456623,
+      "auc": 0.5212718316166592,
+      "ece": 0.009987966681726357
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "model": "gbm",
+      "n": 1131,
+      "observed_rate": 0.28205128205128205,
+      "mean_pred": 0.27048410974014386,
+      "brier": 0.20320059907593663,
+      "brier_base": 0.2026301709972906,
+      "brier_skill": -0.0028151191692655786,
+      "log_loss": 0.602021452862273,
+      "auc": 0.5114852448383959,
+      "ece": 0.022996329812704375
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "model": "bayes beta-binomial",
+      "n": 1131,
+      "observed_rate": 0.28205128205128205,
+      "mean_pred": 0.3028040970503741,
+      "brier": 0.2036905417081595,
+      "brier_base": 0.2026301709972906,
+      "brier_skill": -0.005233034674204884,
+      "log_loss": 0.597659072276121,
+      "auc": 0.48062371635498863,
+      "ece": 0.0293054134158386
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "model": "base rate",
+      "n": 5750,
+      "observed_rate": 0.2391304347826087,
+      "mean_pred": 0.24152197504069453,
+      "brier": 0.18195278940809528,
+      "brier_base": 0.18195278940809528,
+      "brier_skill": 0.0,
+      "log_loss": 0.5500911697400475,
+      "auc": 0.5,
+      "ece": 0.002391540258085828
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "model": "logistic",
+      "n": 5750,
+      "observed_rate": 0.2391304347826087,
+      "mean_pred": 0.24189537034700398,
+      "brier": 0.18126169809273388,
+      "brier_base": 0.18195278940809528,
+      "brier_skill": 0.0037981902756730745,
+      "log_loss": 0.5537788610059742,
+      "auc": 0.545522451948052,
+      "ece": 0.00450357904265611
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "model": "gbm",
+      "n": 5750,
+      "observed_rate": 0.2391304347826087,
+      "mean_pred": 0.24073255079462785,
+      "brier": 0.18108545818027985,
+      "brier_base": 0.18195278940809528,
+      "brier_skill": 0.0047667926973635755,
+      "log_loss": 0.5488691381553598,
+      "auc": 0.5448971636363636,
+      "ece": 0.0027755744406995297
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "n": 5750,
+      "observed_rate": 0.2391304347826087,
+      "mean_pred": 0.22440269934337373,
+      "brier": 0.18214185291616092,
+      "brier_base": 0.18195278940809528,
+      "brier_skill": -0.001039080020046157,
+      "log_loss": 0.5506700241060681,
+      "auc": 0.5117077610389611,
+      "ece": 0.014727735439234951
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "model": "base rate",
+      "n": 419,
+      "observed_rate": 0.3412887828162291,
+      "mean_pred": 0.3007889546351086,
+      "brier": 0.2264509856227462,
+      "brier_base": 0.2264509856227462,
+      "brier_skill": 0.0,
+      "log_loss": 0.6456946772830447,
+      "auc": 0.5,
+      "ece": 0.04049982818112064
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "model": "logistic",
+      "n": 419,
+      "observed_rate": 0.3412887828162291,
+      "mean_pred": 0.30912907337835843,
+      "brier": 0.24042304530104286,
+      "brier_base": 0.2264509856227462,
+      "brier_skill": -0.061700149548358674,
+      "log_loss": 0.7614548079184252,
+      "auc": 0.5039905746427485,
+      "ece": 0.06539276467285404
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "model": "gbm",
+      "n": 419,
+      "observed_rate": 0.3412887828162291,
+      "mean_pred": 0.3027402808586602,
+      "brier": 0.2357484744287092,
+      "brier_base": 0.2264509856227462,
+      "brier_skill": -0.041057400480702944,
+      "log_loss": 0.6695273876366518,
+      "auc": 0.47287676092023917,
+      "ece": 0.09593130615058687
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "model": "bayes beta-binomial",
+      "n": 419,
+      "observed_rate": 0.3412887828162291,
+      "mean_pred": 0.31370689045508543,
+      "brier": 0.22553040446686726,
+      "brier_base": 0.2264509856227462,
+      "brier_skill": 0.004065255681477087,
+      "log_loss": 0.6435529844807254,
+      "auc": 0.5198135198135198,
+      "ece": 0.027581892361143678
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "model": "base rate",
+      "n": 2019,
+      "observed_rate": 0.23922734026745915,
+      "mean_pred": 0.23050295255548778,
+      "brier": 0.1820737348769652,
+      "brier_base": 0.1820737348769652,
+      "brier_skill": 0.0,
+      "log_loss": 0.550400368601203,
+      "auc": 0.5,
+      "ece": 0.008724387711971454
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "model": "logistic",
+      "n": 2019,
+      "observed_rate": 0.23922734026745915,
+      "mean_pred": 0.2164440782640471,
+      "brier": 0.18111370545293629,
+      "brier_base": 0.1820737348769652,
+      "brier_skill": 0.005272750760441425,
+      "log_loss": 0.5477202909821011,
+      "auc": 0.5703873091356108,
+      "ece": 0.033503785451705834
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "model": "gbm",
+      "n": 2019,
+      "observed_rate": 0.23922734026745915,
+      "mean_pred": 0.21089406809275804,
+      "brier": 0.18212608924489188,
+      "brier_base": 0.1820737348769652,
+      "brier_skill": -0.0002875448672596814,
+      "log_loss": 0.5488356881718863,
+      "auc": 0.5807399499654934,
+      "ece": 0.03898442151617453
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "n": 2019,
+      "observed_rate": 0.23922734026745915,
+      "mean_pred": 0.20764228580604344,
+      "brier": 0.18320713066349884,
+      "brier_base": 0.1820737348769652,
+      "brier_skill": -0.006224927430084959,
+      "log_loss": 0.5539429376613315,
+      "auc": 0.49934626250862657,
+      "ece": 0.03158505446141573
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "model": "base rate",
+      "n": 537,
+      "observed_rate": 0.14711359404096835,
+      "mean_pred": 0.14871382636655953,
+      "brier": 0.12547374523281338,
+      "brier_base": 0.12547374523281338,
+      "brier_skill": 0.0,
+      "log_loss": 0.41767962252327406,
+      "auc": 0.5,
+      "ece": 0.0016002323255911444
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "model": "logistic",
+      "n": 537,
+      "observed_rate": 0.14711359404096835,
+      "mean_pred": 0.14189824472902246,
+      "brier": 0.13446949226384727,
+      "brier_base": 0.12547374523281338,
+      "brier_skill": -0.0716942577456543,
+      "log_loss": 0.5107005948498152,
+      "auc": 0.630078492067879,
+      "ece": 0.030176982458175988
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "model": "gbm",
+      "n": 537,
+      "observed_rate": 0.14711359404096835,
+      "mean_pred": 0.13812550714949257,
+      "brier": 0.1288285185574085,
+      "brier_base": 0.12547374523281338,
+      "brier_skill": -0.02673685493622946,
+      "log_loss": 0.4672297584922524,
+      "auc": 0.6706649715328064,
+      "ece": 0.07024187719300079
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "n": 537,
+      "observed_rate": 0.14711359404096835,
+      "mean_pred": 0.13577470940601072,
+      "brier": 0.12379672092668585,
+      "brier_base": 0.12547374523281338,
+      "brier_skill": 0.013365539563801598,
+      "log_loss": 0.40950891709361553,
+      "auc": 0.5697999005030125,
+      "ece": 0.017729790350312226
+    }
+  ],
+  "probability_filter": [
+    {
+      "tf": 1,
+      "family": "A",
+      "model": "logistic",
+      "p_breakeven": 0.5602473923379048,
+      "kept_share": 0.0,
+      "exp_r_all": -0.6128240486111582,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.6128240486111582
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "model": "gbm",
+      "p_breakeven": 0.5602473923379048,
+      "kept_share": 0.0,
+      "exp_r_all": -0.6128240486111582,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.6128240486111582
+    },
+    {
+      "tf": 1,
+      "family": "A",
+      "model": "bayes beta-binomial",
+      "p_breakeven": 0.5602473923379048,
+      "kept_share": 0.0,
+      "exp_r_all": -0.6128240486111582,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.6128240486111582
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "model": "logistic",
+      "p_breakeven": 0.5983866515915244,
+      "kept_share": 0.0,
+      "exp_r_all": -0.6483077290478321,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.6483077290478321
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "model": "gbm",
+      "p_breakeven": 0.5983866515915244,
+      "kept_share": 0.0,
+      "exp_r_all": -0.6483077290478321,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.6483077290478321
+    },
+    {
+      "tf": 1,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "p_breakeven": 0.5983866515915244,
+      "kept_share": 0.0,
+      "exp_r_all": -0.6483077290478321,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.6483077290478321
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "model": "logistic",
+      "p_breakeven": 0.39963221949475947,
+      "kept_share": 0.0,
+      "exp_r_all": -0.3893632124518561,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.3893632124518561
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "model": "gbm",
+      "p_breakeven": 0.39963221949475947,
+      "kept_share": 0.0,
+      "exp_r_all": -0.3893632124518561,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.3893632124518561
+    },
+    {
+      "tf": 5,
+      "family": "A",
+      "model": "bayes beta-binomial",
+      "p_breakeven": 0.39963221949475947,
+      "kept_share": 0.0,
+      "exp_r_all": -0.3893632124518561,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.3893632124518561
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "model": "logistic",
+      "p_breakeven": 0.380068186029482,
+      "kept_share": 0.0,
+      "exp_r_all": -0.396706114187768,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.396706114187768
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "model": "gbm",
+      "p_breakeven": 0.380068186029482,
+      "kept_share": 0.005043478260869565,
+      "exp_r_all": -0.396706114187768,
+      "exp_r_kept": -0.4390372021607292,
+      "exp_r_dropped": -0.39649153604562226
+    },
+    {
+      "tf": 5,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "p_breakeven": 0.380068186029482,
+      "kept_share": 0.0,
+      "exp_r_all": -0.396706114187768,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.396706114187768
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "model": "logistic",
+      "p_breakeven": 0.3238725613734236,
+      "kept_share": 0.2553699284009546,
+      "exp_r_all": -0.048408518365521847,
+      "exp_r_kept": -0.07285318247777535,
+      "exp_r_dropped": -0.040025252147537445
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "model": "gbm",
+      "p_breakeven": 0.3238725613734236,
+      "kept_share": 0.27684964200477324,
+      "exp_r_all": -0.048408518365521847,
+      "exp_r_kept": -0.24858445955282799,
+      "exp_r_dropped": 0.02822649542235776
+    },
+    {
+      "tf": 15,
+      "family": "A",
+      "model": "bayes beta-binomial",
+      "p_breakeven": 0.3238725613734236,
+      "kept_share": 0.0883054892601432,
+      "exp_r_all": -0.048408518365521847,
+      "exp_r_kept": -0.24118838489584335,
+      "exp_r_dropped": -0.02973612291624986
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "model": "logistic",
+      "p_breakeven": 0.2914645405212317,
+      "kept_share": 0.1104507181773155,
+      "exp_r_all": -0.22711141872193133,
+      "exp_r_kept": -0.3355472406989516,
+      "exp_r_dropped": -0.21364750541409422
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "model": "gbm",
+      "p_breakeven": 0.2914645405212317,
+      "kept_share": 0.07677067855373948,
+      "exp_r_all": -0.22711141872193133,
+      "exp_r_kept": -0.17405160166161884,
+      "exp_r_dropped": -0.2315235816212599
+    },
+    {
+      "tf": 15,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "p_breakeven": 0.2914645405212317,
+      "kept_share": 0.0,
+      "exp_r_all": -0.22711141872193133,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.22711141872193133
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "model": "logistic",
+      "p_breakeven": 0.1806526266638182,
+      "kept_share": 0.3221601489757914,
+      "exp_r_all": -0.18895934685322954,
+      "exp_r_kept": -0.2096107135959894,
+      "exp_r_dropped": -0.17914427419801673
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "model": "gbm",
+      "p_breakeven": 0.1806526266638182,
+      "kept_share": 0.23649906890130354,
+      "exp_r_all": -0.18895934685322954,
+      "exp_r_kept": -0.29268815470764387,
+      "exp_r_dropped": -0.15682871612759383
+    },
+    {
+      "tf": 60,
+      "family": "B",
+      "model": "bayes beta-binomial",
+      "p_breakeven": 0.1806526266638182,
+      "kept_share": 0.0,
+      "exp_r_all": -0.18895934685322954,
+      "exp_r_kept": NaN,
+      "exp_r_dropped": -0.18895934685322954
+    }
+  ]
+}

@@ -41,17 +41,29 @@ def lo_mackinlay(d: np.ndarray, q: int) -> dict:
     return {"q": q, "vr": float(vr), "z": float(z), "p": float(2 * stats.norm.sf(abs(z))), "n": T}
 
 
+def ljung_box(x: np.ndarray, lags: int) -> tuple[float, float]:
+    """Ljung-Box Q from the FFT autocorrelation: Q = n(n+2) sum rho_k^2/(n-k).
+    Same statistic as statsmodels' acorr_ljungbox, without its O(n^2) correlation."""
+    from statsmodels.tsa.stattools import acf
+    n = len(x)
+    rho = acf(x, nlags=lags, fft=True)[1:]
+    q = n * (n + 2) * np.sum(rho ** 2 / (n - np.arange(1, lags + 1)))
+    return float(q), float(stats.chi2.sf(q, lags))
+
+
 def acf_ljungbox(d: np.ndarray, lags: int = 10) -> dict:
-    from statsmodels.stats.diagnostic import acorr_ljungbox
+    """Autocorrelation of changes and of squared changes (volatility clustering).
+
+    Ljung-Box assumes homoskedasticity; with volatility clustering it over-rejects,
+    so read lb_p together with the robust variance-ratio z*."""
     from statsmodels.tsa.stattools import acf
     d = np.asarray(d, float)
     d = d[np.isfinite(d)]
     a = acf(d, nlags=lags, fft=True)
-    lb = acorr_ljungbox(d, lags=[lags], return_df=True)
-    lb2 = acorr_ljungbox(d ** 2 - np.mean(d ** 2), lags=[lags], return_df=True)
+    _, lb_p = ljung_box(d, lags)
+    q2, p2 = ljung_box(d ** 2 - np.mean(d ** 2), lags)
     return {"acf1": float(a[1]), "acf2": float(a[2]), "acf5": float(a[5]),
-            "lb_p": float(lb["lb_pvalue"].iloc[0]),
-            "lb_sq_stat": float(lb2["lb_stat"].iloc[0]), "lb_sq_p": float(lb2["lb_pvalue"].iloc[0]),
+            "lb_p": lb_p, "lb_sq_stat": q2, "lb_sq_p": p2,
             "se_acf": float(1 / np.sqrt(len(d))), "n": len(d)}
 
 
