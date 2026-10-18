@@ -4,3 +4,4 @@ pandas>=2.2
 ccxt>=4.3          # crypto exchanges (Binance, Bybit, OKX, ...)
 ib_async>=1.0      # Interactive Brokers (MNQ / NQ futures) — needs TWS or IB Gateway
 pytest>=8
+streamlit>=1.50    # the dashboard (python3 -m tradebot dashboard)

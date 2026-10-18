@@ -19,9 +19,10 @@ def ema(x: pd.Series, n: int) -> pd.Series:
 
 def atr(high: pd.Series, low: pd.Series, close: pd.Series, n: int = 14) -> pd.Series:
     """Wilder's average true range."""
-    prev = close.shift(1)
-    tr = pd.concat([high - low, (high - prev).abs(), (low - prev).abs()], axis=1).max(axis=1)
-    return tr.ewm(alpha=1.0 / n, adjust=False, min_periods=n).mean()
+    h, lo, c = high.to_numpy(float), low.to_numpy(float), close.to_numpy(float)
+    prev = np.r_[np.nan, c[:-1]]
+    tr = np.fmax(h - lo, np.fmax(np.abs(h - prev), np.abs(lo - prev)))   # fmax skips the first bar's NaN
+    return pd.Series(tr, index=high.index).ewm(alpha=1.0 / n, adjust=False, min_periods=n).mean()
 
 
 def rsi(close: pd.Series, n: int = 14) -> pd.Series:

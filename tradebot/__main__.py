@@ -9,6 +9,7 @@
     python3 -m tradebot resume    --config ...      # remove the kill switch
     python3 -m tradebot reset-halt --config ...     # clear a HARD halt after a human has looked
     python3 -m tradebot new-strategy my_idea        # copy the template to tradebot/strategies/my_idea.py
+    python3 -m tradebot dashboard                   # control panel in the browser
 """
 from __future__ import annotations
 
@@ -126,19 +127,25 @@ def cmd_reset_halt(a) -> int:
 
 
 def cmd_new_strategy(a) -> int:
-    name = a.name
-    if not name.isidentifier():
-        print("name must be a valid Python identifier, e.g. my_idea")
+    from .strategy import create_strategy_file
+    try:
+        dst = create_strategy_file(a.name, ROOT / "strategies")
+    except ValueError as e:
+        print(e)
         return 2
-    dst = ROOT / "strategies" / f"{name}.py"
-    if dst.exists():
-        print(f"{dst} already exists")
-        return 2
-    src = (ROOT / "strategies" / "template.py").read_text()
-    cls = "".join(p.capitalize() for p in name.split("_")) + "Strategy"
-    dst.write_text(src.replace("class TemplateStrategy", f"class {cls}").replace('name = "template"', f'name = "{name}"'))
-    print(f"created {dst}\nthen set   [strategy] name = '{name}'   in your config")
+    print(f"created {dst}\nthen set   [strategy] name = '{a.name}'   in your config")
     return 0
+
+
+def cmd_dashboard(a) -> int:
+    import subprocess
+    app = ROOT / "dashboard.py"
+    # localhost only: the panel can start a live bot, so it must not be reachable from the network
+    return subprocess.call([sys.executable, "-m", "streamlit", "run", str(app), "--server.port", str(a.port),
+                            "--server.address", "localhost",
+                            "--browser.gatherUsageStats", "false", "--server.headless", "true" if a.no_browser else "false",
+                            "--theme.light.primaryColor", "#2a78d6", "--theme.dark.primaryColor", "#3987e5",
+                            "--client.toolbarMode", "minimal"])
 
 
 def main(argv=None) -> int:
@@ -156,6 +163,9 @@ def main(argv=None) -> int:
         sub.add_parser(n).add_argument("--config", required=True)
     ns = sub.add_parser("new-strategy")
     ns.add_argument("name")
+    d = sub.add_parser("dashboard", help="open the control panel in the browser")
+    d.add_argument("--port", type=int, default=8501)
+    d.add_argument("--no-browser", action="store_true")
     a = ap.parse_args(argv)
     try:
         return _dispatch(a)
@@ -171,7 +181,8 @@ def main(argv=None) -> int:
 
 def _dispatch(a) -> int:
     return {"backtest": cmd_backtest, "run": cmd_run, "check": cmd_check, "status": cmd_status, "stop": cmd_stop,
-            "resume": cmd_resume, "reset-halt": cmd_reset_halt, "new-strategy": cmd_new_strategy}[a.cmd](a)
+            "resume": cmd_resume, "reset-halt": cmd_reset_halt, "new-strategy": cmd_new_strategy,
+            "dashboard": cmd_dashboard}[a.cmd](a)
 
 
 if __name__ == "__main__":

@@ -40,7 +40,11 @@ Guide (Georgian): **[TRADEBOT.md](TRADEBOT.md)**.
 ```bash
 pip install -r requirements-bot.txt
 python3 -m tradebot backtest --config configs/backtest_btc.toml
+python3 -m tradebot dashboard        # control panel at http://localhost:8501
 ```
+
+On a Mac, double-clicking `start_dashboard.command` sets up `.venv` on first run
+and opens the same control panel.
 
 ## Layout
 

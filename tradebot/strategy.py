@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import importlib
 import inspect
+from pathlib import Path
 
 import pandas as pd
 
@@ -95,3 +96,22 @@ def load_strategy(name: str, params: dict | None = None) -> Strategy:
             raise ValueError(f"tradebot/strategies/{name}.py must define exactly one Strategy subclass")
         cls = found[0]
     return cls(params)
+
+
+def list_strategies(directory: Path | None = None) -> list[str]:
+    d = directory or Path(__file__).resolve().parent / "strategies"
+    return sorted(f.stem for f in d.glob("*.py") if not f.stem.startswith("_"))
+
+
+def create_strategy_file(name: str, directory: Path | None = None) -> Path:
+    """Copy template.py to <name>.py with its class renamed. Refuses to overwrite."""
+    if not name.isidentifier() or name.startswith("_"):
+        raise ValueError("strategy name must be a Python identifier, e.g. my_idea")
+    d = directory or Path(__file__).resolve().parent / "strategies"
+    dst = d / f"{name}.py"
+    if dst.exists():
+        raise ValueError(f"{dst} already exists")
+    cls = "".join(p.capitalize() for p in name.split("_")) + "Strategy"
+    src = (d / "template.py").read_text()
+    dst.write_text(src.replace("class TemplateStrategy", f"class {cls}").replace('name = "template"', f'name = "{name}"'))
+    return dst
