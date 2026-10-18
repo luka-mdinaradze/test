@@ -1,0 +1,50 @@
+# Orders to an Interactive Brokers PAPER account (port 7497). Same file with a live
+# port (7496 / Gateway 4001) trades real money — only after the paper account works.
+#   python3 -m tradebot check --config configs/live_mnq_ibkr_paper_account.toml
+#   python3 -m tradebot run   --config configs/live_mnq_ibkr_paper_account.toml --i-understand-live
+
+[bot]
+name = "mnq-ib-paper"
+mode = "live"
+state_dir = "runs/mnq-ib-paper"
+history_bars = 300
+
+[market]
+broker = "ibkr"
+feed = "ibkr"
+symbol = "MNQ"
+timeframe = "5m"
+
+[ibkr]
+host = "127.0.0.1"
+port = 7497
+client_id = 18
+symbol = "MNQ"
+exchange = "CME"
+
+[instrument]
+point_value = 2.0
+tick_size = 0.25
+qty_step = 1
+min_qty = 1
+max_qty = 2
+commission_per_unit = 0.62
+fee_bps = 0.0
+slippage_ticks = 1
+slippage_bps = 0.0
+
+[account]
+risk_pct = 0.5
+max_risk_pct = 1.0
+daily_loss_limit_pct = 2.0
+max_consecutive_losses = 4
+
+[session]
+timezone = "America/New_York"
+trade_start = "09:35"
+trade_end = "15:45"
+flatten_at = "15:55"
+weekdays = [0, 1, 2, 3, 4]
+
+[strategy]
+name = "template"

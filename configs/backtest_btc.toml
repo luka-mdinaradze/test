@@ -1,0 +1,40 @@
+# Backtest on the bundled sample data (no internet, no keys).
+#   python3 -m tradebot backtest --config configs/backtest_btc.toml
+
+[bot]
+name = "btc-backtest"
+mode = "backtest"
+state_dir = "runs/btc-backtest"
+history_bars = 300
+
+[market]
+broker = "paper"
+feed = "csv"
+symbol = "BTC/USDT:USDT"
+timeframe = "15m"
+csv_path = "examples/data/btcusd_15m_2025H1.csv"
+
+[instrument]            # BTC perpetual, taker costs
+point_value = 1.0
+tick_size = 0.1
+qty_step = 0.001
+min_qty = 0.001
+max_qty = 1.0
+fee_bps = 5.0
+slippage_bps = 1.0
+
+[account]
+starting_equity = 5000
+risk_pct = 0.5
+max_risk_pct = 1.0
+daily_loss_limit_pct = 2.0
+max_consecutive_losses = 4
+
+[session]
+timezone = "UTC"
+
+[strategy]
+name = "example_ema_cross"    # swap for "template" or your own strategy
+[strategy.params]
+fast = 12
+slow = 48

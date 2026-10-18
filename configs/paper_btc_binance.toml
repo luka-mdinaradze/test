@@ -1,0 +1,37 @@
+# Paper trading on LIVE Binance prices: simulated fills, no account, no keys.
+#   python3 -m tradebot run --config configs/paper_btc_binance.toml
+
+[bot]
+name = "btc-paper"
+mode = "paper"
+state_dir = "runs/btc-paper"
+history_bars = 300
+poll_seconds = 10
+
+[market]
+broker = "paper"
+feed = "ccxt"               # public market data
+symbol = "BTC/USDT:USDT"
+timeframe = "15m"
+
+[ccxt]
+exchange = "binanceusdm"    # or "bybit", "okx", ... (any ccxt exchange with this symbol)
+
+[instrument]
+point_value = 1.0
+tick_size = 0.1
+qty_step = 0.001
+min_qty = 0.001
+max_qty = 1.0
+fee_bps = 5.0
+slippage_bps = 1.0
+
+[account]
+starting_equity = 5000
+risk_pct = 0.5
+
+[session]
+timezone = "UTC"
+
+[strategy]
+name = "template"           # never trades until its rules are written

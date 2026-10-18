@@ -1,0 +1,6 @@
+# tradebot (the bot platform). Python 3.11+.
+numpy>=1.26
+pandas>=2.2
+ccxt>=4.3          # crypto exchanges (Binance, Bybit, OKX, ...)
+ib_async>=1.0      # Interactive Brokers (MNQ / NQ futures) — needs TWS or IB Gateway
+pytest>=8

@@ -1,0 +1,49 @@
+# Paper trading MNQ on live IB prices (TWS or IB Gateway running, API enabled).
+# Fills are simulated here; IB is used for market data only.
+#   python3 -m tradebot run --config configs/paper_mnq_ibkr.toml
+
+[bot]
+name = "mnq-paper"
+mode = "paper"
+state_dir = "runs/mnq-paper"
+history_bars = 300
+
+[market]
+broker = "paper"
+feed = "ibkr"
+symbol = "MNQ"
+timeframe = "5m"
+
+[ibkr]
+host = "127.0.0.1"
+port = 7497                 # TWS paper (Gateway paper: 4002)
+client_id = 17
+symbol = "MNQ"
+exchange = "CME"
+
+[instrument]                # Micro E-mini Nasdaq-100
+point_value = 2.0
+tick_size = 0.25
+qty_step = 1
+min_qty = 1
+max_qty = 5
+commission_per_unit = 0.62
+fee_bps = 0.0
+slippage_ticks = 1
+slippage_bps = 0.0
+target_through_ticks = 1
+
+[account]
+starting_equity = 5000
+risk_pct = 0.5              # $25: one MNQ only fits stops up to ~11 points
+max_risk_pct = 1.0
+
+[session]                   # CME Globex, exchange time
+timezone = "America/New_York"
+trade_start = "18:15"
+trade_end = "16:40"
+flatten_at = "16:50"
+weekdays = [0, 1, 2, 3, 4, 6]
+
+[strategy]
+name = "template"

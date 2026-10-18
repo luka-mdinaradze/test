@@ -1,0 +1,44 @@
+# Real orders on the Binance USD-M DEMO/testnet account (sandbox = true).
+#   export TRADEBOT_API_KEY=...  TRADEBOT_API_SECRET=...      (testnet keys)
+#   python3 -m tradebot check --config configs/live_btc_binance_testnet.toml
+#   python3 -m tradebot run   --config configs/live_btc_binance_testnet.toml --i-understand-live
+
+[bot]
+name = "btc-testnet"
+mode = "live"
+state_dir = "runs/btc-testnet"
+history_bars = 300
+
+[market]
+broker = "ccxt"
+feed = "ccxt"               # prices come from the same (testnet) venue as the orders
+symbol = "BTC/USDT:USDT"
+timeframe = "15m"
+
+[ccxt]
+exchange = "binanceusdm"
+sandbox = true              # set false ONLY for real money, after testnet works
+api_key_env = "TRADEBOT_API_KEY"
+api_secret_env = "TRADEBOT_API_SECRET"
+
+[instrument]
+point_value = 1.0
+tick_size = 0.1
+qty_step = 0.001
+min_qty = 0.001
+max_qty = 0.05
+fee_bps = 5.0
+slippage_bps = 1.0
+
+[account]
+risk_pct = 0.5
+max_risk_pct = 1.0
+daily_loss_limit_pct = 2.0
+max_consecutive_losses = 4
+max_drawdown_pct = 15.0
+
+[session]
+timezone = "UTC"
+
+[strategy]
+name = "template"

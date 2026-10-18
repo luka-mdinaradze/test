@@ -29,6 +29,19 @@ python3 -m nqlab.live --demo --candidate B --until "2026-04-15 09:59"   # resear
 Add `--market BTC` to experiments 2–5 for the Bitstamp BTC/USD study. Each
 experiment writes `results/<nn>_*.md` (readable) and `.json` (machine-readable).
 
+
+## The bot platform (`tradebot/`)
+
+A strategy-agnostic trading bot: backtest, paper and live through one loop, with
+paper / ccxt (crypto) / Interactive Brokers (MNQ, NQ) brokers, risk governor,
+session rules, state recovery and a strategy template to fill in.
+Guide (Georgian): **[TRADEBOT.md](TRADEBOT.md)**.
+
+```bash
+pip install -r requirements-bot.txt
+python3 -m tradebot backtest --config configs/backtest_btc.toml
+```
+
 ## Layout
 
 | Path | Contents |
