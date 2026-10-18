@@ -59,7 +59,8 @@ def equity_chart(curves: dict, splits: list, path: Path, title: str):
         for x, lbl in splits:
             ax.axvline(x, color="0.55", lw=0.8, ls="--")
         ax.set_ylabel("cum. R", fontsize=8)
-        ax.set_title(name, fontsize=9, loc="left")
+        ax.text(0.005, 0.95, name, transform=ax.transAxes, va="top", fontsize=9,
+                bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.85, "pad": 1.5})
         ax.tick_params(labelsize=8)
     top = axes[0, 0]
     for x, lbl in splits:
