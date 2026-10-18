@@ -258,7 +258,17 @@ def main(market, quick=False):
                          "train_mean": row["train_mean"], "plateau": row.get("plateau", np.nan),
                          "null_mean": float(np.nanmean(nulls)), "null_p": pnull,
                          "dsr": dsr["dsr"], "sr_ann": dsr.get("sr_ann"), "sr0_ann": dsr.get("sr0_ann"),
+                         "dsr_null": dsr.get("dsr_null"), "sr0_null_ann": dsr.get("sr0_null_ann"),
                          **gates, "passes_dev": passed})
+        bd = []
+        for sp_name, (lo, hi) in (("train", tw), ("validation", vw)):
+            s_ = t[(t["exit_tday"] >= lo) & (t["exit_tday"] <= hi)]
+            for lab_name, m_ in (("long", s_["side"] == 1), ("short", s_["side"] == -1),
+                                 ("RTH entry", s_["rth"]), ("ETH entry", ~s_["rth"].astype(bool))):
+                g_ = s_[m_]
+                bd.append({"split": sp_name, "subset": lab_name, "n": len(g_),
+                           "mean_r": g_["r"].mean() if len(g_) else np.nan, "total_r": g_["r"].sum()})
+        extra_md += [f"### Finalist {fam} breakdown: {key}\n", md_table(pd.DataFrame(bd), ".3f", index=False), ""]
         if p is not None:
             extra_md += finalist_studies(lab, tf, fam, p, dev, tw, vw, store, key)
     ftab = pd.DataFrame(fin_rows)

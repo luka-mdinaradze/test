@@ -1,0 +1,132 @@
+{
+  "market": "NQ",
+  "instrument": {
+    "symbol": "MNQ",
+    "kind": "future",
+    "tick_size": 0.25,
+    "point_value": 2.0,
+    "commission_side": 0.62,
+    "fee_bps_side": 0.0,
+    "half_spread_rth": 0.0,
+    "half_spread_eth": 0.0,
+    "slip_ticks_rth": 1.0,
+    "slip_ticks_eth": 2.0,
+    "slip_bps_side": 0.0,
+    "tp_through_ticks": 1.0,
+    "tp_through_bps": 0.0,
+    "qty_step": 1.0,
+    "min_qty": 1.0,
+    "max_qty": 20.0,
+    "exchange": "CME Globex"
+  },
+  "account": {
+    "equity": 5000.0,
+    "risk_pct": 0.005,
+    "max_risk_pct": 0.01,
+    "max_positions": 1,
+    "daily_loss_limit_pct": 0.02,
+    "max_consecutive_losses": 4,
+    "compounding": true
+  },
+  "session": {
+    "tz": "America/New_York",
+    "day_start_min": 1080,
+    "flatten_min": 1010,
+    "rth_start_min": 570,
+    "rth_end_min": 960,
+    "no_entry_first_min": 15,
+    "no_entry_last_min": 10,
+    "buckets": [
+      [
+        "ASIA",
+        1080,
+        180
+      ],
+      [
+        "LONDON",
+        180,
+        570
+      ],
+      [
+        "RTH_OPEN",
+        570,
+        630
+      ],
+      [
+        "RTH_MID",
+        630,
+        840
+      ],
+      [
+        "RTH_CLOSE",
+        840,
+        960
+      ],
+      [
+        "POST",
+        960,
+        1020
+      ]
+    ],
+    "h1_offset_min": 30
+  },
+  "frozen_from_commit": "18430e57e26da594d1f10efe08b4034e8024f3b3",
+  "selected": null,
+  "verdict_dev": "NO strategy passed the development gates -> system outputs NO TRADE",
+  "candidates": {
+    "A": {
+      "key": "15m A w=40 tau=2.0 k=2.0 rr=3.0",
+      "tf": 15,
+      "passes_dev": false,
+      "params": {
+        "w": 40,
+        "tau": 2.0,
+        "k": 2.0,
+        "rr": 3.0
+      }
+    },
+    "B": {
+      "key": "15m B w=20 z=3.0 k=2.0 rr=2.5",
+      "tf": 15,
+      "passes_dev": false,
+      "params": {
+        "w": 20,
+        "z": 3.0,
+        "k": 2.0,
+        "rr": 2.5
+      }
+    },
+    "C": {
+      "key": "15m C2 [A w=40 tau=2.0 k=2.0 rr=3.0 | B w=20 z=3.0 k=2.0 rr=3.0]",
+      "tf": 15,
+      "passes_dev": false,
+      "variant": "C2",
+      "A": {
+        "w": 40,
+        "tau": 2.0,
+        "k": 2.0,
+        "rr": 3.0,
+        "hold_mult": 2.0
+      },
+      "B": {
+        "w": 20,
+        "z": 3.0,
+        "k": 2.0,
+        "rr": 3.0,
+        "hold_mult": 1.0
+      },
+      "route": {
+        "RTH": "A",
+        "RTH_train_exp": {
+          "A": 0.17076604128226874,
+          "B": -0.11479052691564194
+        },
+        "ETH": "NONE",
+        "ETH_train_exp": {
+          "A": -0.03958835309515855,
+          "B": -0.0055942706324358035
+        }
+      }
+    }
+  }
+}

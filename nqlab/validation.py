@@ -95,9 +95,17 @@ def deflated_sharpe(returns: np.ndarray, n_trials: int, var_sr_trials: float) ->
     if len(x) < 10 or x.std(ddof=1) == 0:
         return {"sr": np.nan, "sr0": np.nan, "dsr": np.nan}
     sr = x.mean() / x.std(ddof=1)
+    sk, ku = float(stats.skew(x)), float(stats.kurtosis(x, fisher=False))
     sr0 = expected_max_sharpe(var_sr_trials, n_trials)
+    # Alternative benchmark: every trial is pure noise, so each Sharpe estimate has
+    # sampling variance ~1/T. The empirical cross-trial variance above also contains
+    # real, KNOWN differences between trials (e.g. cost-dominated 1-minute configs),
+    # which inflates the hurdle; both are reported.
+    sr0_null = expected_max_sharpe(1.0 / len(x), n_trials)
     return {"sr": float(sr), "sr_ann": float(sr * np.sqrt(252)), "sr0": sr0, "sr0_ann": float(sr0 * np.sqrt(252)),
-            "dsr": probabilistic_sharpe(sr, len(x), float(stats.skew(x)), float(stats.kurtosis(x, fisher=False)), sr0),
+            "dsr": probabilistic_sharpe(sr, len(x), sk, ku, sr0),
+            "sr0_null_ann": float(sr0_null * np.sqrt(252)),
+            "dsr_null": probabilistic_sharpe(sr, len(x), sk, ku, sr0_null),
             "n_trials": n_trials}
 
 
